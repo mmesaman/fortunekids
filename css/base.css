@@ -1218,7 +1218,7 @@ main {
 
 .report-item__soon {
     font-size: var(--text-sm);
-    color: var(--color-neutral-400);
+    color: var(--color-neutral-500);
     font-style: italic;
 }
 
@@ -1846,5 +1846,44 @@ main {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
+    }
+}
+/* ========================================
+   ACCESIBILIDAD Y TÁCTIL (FK-084..086)
+   ======================================== */
+
+/* Foco visible global para enlaces */
+a:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* Targets táctiles cómodos en pantallas táctiles */
+@media (pointer: coarse) {
+    .filter-chip,
+    .footer__links a,
+    .footer__legal a,
+    .breadcrumbs__link {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .footer__links li,
+    .footer__legal {
+        margin-bottom: 0;
+    }
+}
+
+/* Respeto a la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

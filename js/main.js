@@ -353,53 +353,62 @@ function initFormValidation() {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            let isValid = true;
-            const requiredFields = form.querySelectorAll('[required]');
+            let firstInvalid = null;
+
+            function setError(field, message) {
+                field.classList.add('form-input--error');
+                field.setAttribute('aria-invalid', 'true');
+
+                let errorEl = field.parentNode.querySelector('.form-error');
+                if (!errorEl) {
+                    errorEl = document.createElement('span');
+                    errorEl.className = 'form-error';
+                    errorEl.id = (field.id || field.name || 'campo') + '-error';
+                    field.parentNode.appendChild(errorEl);
+                }
+                errorEl.textContent = message;
+
+                const describedBy = field.getAttribute('aria-describedby') || '';
+                if (describedBy.indexOf(errorEl.id) === -1) {
+                    field.setAttribute('aria-describedby', (describedBy ? describedBy + ' ' : '') + errorEl.id);
+                }
+
+                if (!firstInvalid) firstInvalid = field;
+            }
+
+            function clearError(field) {
+                field.classList.remove('form-input--error');
+                field.removeAttribute('aria-invalid');
+                const errorEl = field.parentNode.querySelector('.form-error');
+                if (errorEl) {
+                    errorEl.remove();
+                }
+            }
             
-            requiredFields.forEach(field => {
+            // Required fields
+            form.querySelectorAll('[required]').forEach(field => {
                 if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('form-input--error');
-                    
-                    // Show error message
-                    let errorEl = field.parentNode.querySelector('.form-error');
-                    if (!errorEl) {
-                        errorEl = document.createElement('span');
-                        errorEl.className = 'form-error';
-                        errorEl.textContent = 'Este campo es obligatorio';
-                        field.parentNode.appendChild(errorEl);
-                    }
+                    setError(field, 'Este campo es obligatorio');
                 } else {
-                    field.classList.remove('form-input--error');
-                    const errorEl = field.parentNode.querySelector('.form-error');
-                    if (errorEl) {
-                        errorEl.remove();
-                    }
+                    clearError(field);
                 }
             });
             
             // Email validation
-            const emailFields = form.querySelectorAll('input[type="email"]');
-            emailFields.forEach(field => {
+            form.querySelectorAll('input[type="email"]').forEach(field => {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (field.value && !emailRegex.test(field.value)) {
-                    isValid = false;
-                    field.classList.add('form-input--error');
-                    
-                    let errorEl = field.parentNode.querySelector('.form-error');
-                    if (!errorEl) {
-                        errorEl = document.createElement('span');
-                        errorEl.className = 'form-error';
-                        errorEl.textContent = 'Por favor, introduce un email válido';
-                        field.parentNode.appendChild(errorEl);
-                    }
+                    setError(field, 'Por favor, introduce un email válido');
                 }
             });
+
+            const isValid = !form.querySelector('.form-input--error');
             
             if (isValid) {
                 // Show success message
                 const successMessage = document.createElement('div');
                 successMessage.className = 'alert alert--success';
+                successMessage.setAttribute('role', 'status');
                 successMessage.textContent = 'Formulario enviado correctamente. Te contactaremos pronto.';
                 form.insertBefore(successMessage, form.firstChild);
                 
@@ -410,6 +419,8 @@ function initFormValidation() {
                 setTimeout(() => {
                     successMessage.remove();
                 }, 5000);
+            } else if (firstInvalid) {
+                firstInvalid.focus();
             }
         });
     });
