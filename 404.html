@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <!-- NOTA: rutas absolutas /fortunekids/ - sustituir si se usa dominio propio -->
+    <title>Página no encontrada | Fortune Kids</title>
+
+    <link rel="icon" type="image/svg+xml" href="/fortunekids/assets/icons/favicon.svg">
+    <link rel="stylesheet" href="/fortunekids/css/variables.css">
+    <link rel="stylesheet" href="/fortunekids/css/base.css">
+    <link rel="stylesheet" href="/fortunekids/css/layout.css">
+    <link rel="stylesheet" href="/fortunekids/css/components.css">
+
+    <style>
+        .error-404 { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--space-16) var(--space-4); padding-top: calc(80px + var(--space-16)); }
+        .error-404__code { font-family: var(--font-display); font-size: clamp(96px, 20vw, 160px); font-weight: var(--font-bold); line-height: 1; color: var(--color-primary-600); margin-bottom: var(--space-2); }
+        .error-404 p { max-width: 420px; margin: 0 auto var(--space-8); color: var(--color-neutral-600); }
+        .error-404__actions { display: flex; gap: var(--space-3); flex-wrap: wrap; justify-content: center; }
+    </style>
+</head>
+<body>
+    <main class="error-404">
+        <div>
+            <p class="error-404__code" aria-hidden="true">404</p>
+            <h1>Página no encontrada</h1>
+            <p>Lo sentimos, la página que buscas no existe o ha sido movida.</p>
+            <div class="error-404__actions">
+                <a href="/fortunekids/" class="btn btn--primary btn--lg">Volver al inicio</a>
+                <a href="/fortunekids/pages/contenidos.html" class="btn btn--secondary btn--lg">Ver historias y noticias</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

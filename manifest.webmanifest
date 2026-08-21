@@ -1,0 +1,19 @@
+{
+    "name": "Fortune Kids",
+    "short_name": "Fortune Kids",
+    "description": "Organización local en Arusha, Tanzania, trabajando por el desarrollo de niños, jóvenes y comunidades.",
+    "lang": "es",
+    "start_url": ".",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0284c7",
+    "icons": [
+        {
+            "src": "assets/icons/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}
