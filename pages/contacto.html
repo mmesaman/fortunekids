@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Fortune Kids: escríbenos para donar, ser voluntario o conocer nuestros proyectos en Arusha, Tanzania">
+    <title>Contacto | Fortune Kids</title>
+    
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="../index.html" aria-label="Fortune Kids - Inicio">
+                    <img src="../assets/images/logo.svg" alt="" width="120" height="40" class="header__logo-img">
+                </a>
+            </div>
+            
+            <nav id="menu-principal" class="header__nav" aria-label="Navegación principal">
+                <ul class="header__nav-list">
+                    <li><a href="../index.html" class="header__nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="header__nav-link">Quiénes somos</a></li>
+                    <li><a href="que-hacemos.html" class="header__nav-link">Qué hacemos</a></li>
+                    <li><a href="impacto.html" class="header__nav-link">Nuestro impacto</a></li>
+                    <li><a href="como-ayudar.html" class="header__nav-link">Cómo ayudar</a></li>
+                    <li><a href="transparencia.html" class="header__nav-link">Transparencia</a></li>
+                    <li><a href="contacto.html" class="header__nav-link active" aria-current="page">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <button class="header__menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="como-ayudar.html#donar" class="btn btn--primary btn--sm header__cta">Donar</a>
+        </div>
+    </header>
+
+    <main id="contenido-principal">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumbs" aria-label="Migas de pan">
+                    <ol class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Inicio</a></li>
+                        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Contacto</span></li>
+                    </ol>
+                </nav>
+                <h1 class="page-hero__title">Contacto</h1>
+                <p class="page-hero__subtitle">Cuéntanos cómo quieres ayudar o resolvemos cualquier duda sobre nuestro trabajo.</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section contact-section" aria-labelledby="contacto-title">
+            <div class="container contact-section__grid">
+                <!-- Info -->
+                <div class="contact-info">
+                    <h2 id="contacto-title" class="section-title section-title--left">Estamos aquí para escucharte</h2>
+                    <p>Responde el formulario y te contestaremos en un plazo máximo de 48 horas laborables.</p>
+
+                    <ul class="contact-info__list">
+                        <li class="contact-info__item">
+                            <span class="contact-info__icon category-card__icon--primary" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </span>
+                            <div>
+                                <strong>Dirección</strong>
+                                <span>Arusha, Tanzania</span>
+                            </div>
+                        </li>
+                        <li class="contact-info__item">
+                            <span class="contact-info__icon category-card__icon--secondary" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                            </span>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:info@fortunekids.org">info@fortunekids.org</a>
+                            </div>
+                        </li>
+                        <li class="contact-info__item">
+                            <span class="contact-info__icon category-card__icon--tertiary" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            </span>
+                            <div>
+                                <strong>Tiempo de respuesta</strong>
+                                <span>48 horas laborables</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Form -->
+                <form class="contact-form card" data-validate novalidate>
+                    <h3 class="card__title">Envíanos un mensaje</h3>
+
+                    <div class="form-group">
+                        <label for="nombre" class="form-label">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" class="form-input" required autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email *</label>
+                        <input type="email" id="email" name="email" class="form-input" required autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asunto" class="form-label">Motivo de contacto</label>
+                        <select id="asunto" name="asunto" class="form-select">
+                            <option value="donacion">Quiero donar</option>
+                            <option value="voluntariado">Quiero ser voluntario/a</option>
+                            <option value="empresa">Colaboración de empresa</option>
+                            <option value="informacion">Más información</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje" class="form-label">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" class="form-textarea" required placeholder="Cuéntanos en qué podemos ayudarte…"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <p class="form-hint">* Campos obligatorios. Tus datos se tratan según nuestra política de privacidad.</p>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--block btn--lg">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Fortune Kids</h3>
+                    <p class="footer__text">Organización local en Arusha, Tanzania, trabajando por el desarrollo de niños, jóvenes y comunidades.</p>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                        <li><a href="que-hacemos.html">Qué hacemos</a></li>
+                        <li><a href="impacto.html">Nuestro impacto</a></li>
+                        <li><a href="transparencia.html">Transparencia</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Contacto</h4>
+                    <ul class="footer__contact">
+                        <li>Arusha, Tanzania</li>
+                        <li><a href="mailto:info@fortunekids.org">info@fortunekids.org</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Síguenos</h4>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram de Fortune Kids">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook de Fortune Kids">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 Fortune Kids. Todos los derechos reservados.</p>
+                <nav class="footer__legal" aria-label="Enlaces legales">
+                    <a href="politica-privacidad.html">Política de privacidad</a>
+                    <a href="politica-cookies.html">Política de cookies</a>
+                    <a href="safeguarding.html">Protección infantil</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

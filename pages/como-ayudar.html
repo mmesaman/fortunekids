@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apoya a Fortune Kids: haz una donación, sé voluntario o colabora como empresa para transformar vidas en Arusha, Tanzania">
+    <title>Cómo ayudar | Fortune Kids</title>
+    
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="../index.html" aria-label="Fortune Kids - Inicio">
+                    <img src="../assets/images/logo.svg" alt="" width="120" height="40" class="header__logo-img">
+                </a>
+            </div>
+            
+            <nav id="menu-principal" class="header__nav" aria-label="Navegación principal">
+                <ul class="header__nav-list">
+                    <li><a href="../index.html" class="header__nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="header__nav-link">Quiénes somos</a></li>
+                    <li><a href="que-hacemos.html" class="header__nav-link">Qué hacemos</a></li>
+                    <li><a href="impacto.html" class="header__nav-link">Nuestro impacto</a></li>
+                    <li><a href="como-ayudar.html" class="header__nav-link active" aria-current="page">Cómo ayudar</a></li>
+                    <li><a href="transparencia.html" class="header__nav-link">Transparencia</a></li>
+                    <li><a href="contacto.html" class="header__nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <button class="header__menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="#donar" class="btn btn--primary btn--sm header__cta">Donar</a>
+        </div>
+    </header>
+
+    <main id="contenido-principal">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumbs" aria-label="Migas de pan">
+                    <ol class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Inicio</a></li>
+                        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Cómo ayudar</span></li>
+                    </ol>
+                </nav>
+                <h1 class="page-hero__title">Cómo ayudar</h1>
+                <p class="page-hero__subtitle">Hay muchas maneras de sumarse: elige la tuya y forma parte del cambio.</p>
+            </div>
+        </section>
+
+        <!-- Donation -->
+        <section id="donar" class="section help-block" aria-labelledby="donar-title">
+            <div class="container">
+                <h2 id="donar-title" class="section-title section-title--left">Haz una donación</h2>
+                <p class="section-intro section-intro--left">Tu aportación financia becas escolares, revisiones médicas y formación profesional.</p>
+
+                <div class="grid grid--3 impact-grid">
+                    <div class="card donation-card">
+                        <span class="donation-card__amount">10€</span>
+                        <h3 class="card__title">Material escolar</h3>
+                        <p class="card__text">Un mes de libros y material para un niño del programa educativo.</p>
+                        <button type="button" class="btn btn--primary btn--block js-donate" data-amount="10">Donar 10€</button>
+                    </div>
+                    <div class="card donation-card donation-card--highlight">
+                        <span class="badge badge--secondary donation-card__badge">Más elegida</span>
+                        <span class="donation-card__amount">25€</span>
+                        <h3 class="card__title">Revisión médica completa</h3>
+                        <p class="card__text">Control pediátrico con seguimiento para un niño durante todo un año.</p>
+                        <button type="button" class="btn btn--primary btn--block js-donate" data-amount="25">Donar 25€</button>
+                    </div>
+                    <div class="card donation-card">
+                        <span class="donation-card__amount">50€</span>
+                        <h3 class="card__title">Formación profesional</h3>
+                        <p class="card__text">Un mes de formación en oficios para un joven del programa de empleo.</p>
+                        <button type="button" class="btn btn--primary btn--block js-donate" data-amount="50">Donar 50€</button>
+                    </div>
+                </div>
+
+                <div id="donation-feedback" class="alert alert--info" role="status" hidden>
+                    <p>La pasarela de pago se integrará próximamente. Escríbenos a
+                    <a href="mailto:info@fortunekids.org">info@fortunekids.org</a> y te indicamos cómo hacer tu donación.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Volunteering -->
+        <section id="voluntariado" class="section section--alt" aria-labelledby="voluntariado-title">
+            <div class="container">
+                <h2 id="voluntariado-title" class="section-title section-title--left">Sé voluntario</h2>
+                <p class="section-intro section-intro--left">Comparte tu tiempo y tus conocimientos en Arusha o desde casa.</p>
+                
+                <div class="grid grid--3 values-grid">
+                    <div class="feature">
+                        <div class="feature__icon category-card__icon--primary" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">En Arusha</h3>
+                            <p class="feature__text">Apoyo escolar, talleres y actividades con niños y jóvenes durante tu estancia.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon category-card__icon--secondary" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Desde casa</h3>
+                            <p class="feature__text">Traducción, difusión, diseño y captación de fondos para nuestros proyectos.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature__icon category-card__icon--tertiary" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Con tu empresa</h3>
+                            <p class="feature__text">Programas de RSC, patrocinio de proyectos y voluntariado corporativo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="volunteer-cta">
+                    <a href="contacto.html" class="btn btn--primary btn--lg">Quiero ser voluntario</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 id="cta-title" class="cta__title">¿Dudas sobre cómo ayudar?</h2>
+                    <p class="cta__text">Cuéntanos qué te motiva y buscaremos juntos la mejor manera de colaborar.</p>
+                    <div class="cta__buttons">
+                        <a href="contacto.html" class="btn btn--white btn--lg">Escríbenos</a>
+                        <a href="transparencia.html" class="btn btn--secondary cta__btn-secondary btn--lg">Ver transparencia</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Fortune Kids</h3>
+                    <p class="footer__text">Organización local en Arusha, Tanzania, trabajando por el desarrollo de niños, jóvenes y comunidades.</p>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                        <li><a href="que-hacemos.html">Qué hacemos</a></li>
+                        <li><a href="impacto.html">Nuestro impacto</a></li>
+                        <li><a href="transparencia.html">Transparencia</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Contacto</h4>
+                    <ul class="footer__contact">
+                        <li>Arusha, Tanzania</li>
+                        <li><a href="mailto:info@fortunekids.org">info@fortunekids.org</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Síguenos</h4>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram de Fortune Kids">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook de Fortune Kids">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 Fortune Kids. Todos los derechos reservados.</p>
+                <nav class="footer__legal" aria-label="Enlaces legales">
+                    <a href="politica-privacidad.html">Política de privacidad</a>
+                    <a href="politica-cookies.html">Política de cookies</a>
+                    <a href="safeguarding.html">Protección infantil</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

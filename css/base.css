@@ -844,6 +844,312 @@ main {
 }
 
 /* ========================================
+   PAGE HERO (interior pages)
+   ======================================== */
+
+.page-hero {
+    padding: var(--space-16) 0 var(--space-12);
+    background: linear-gradient(135deg, var(--color-primary-50), var(--color-secondary-50));
+}
+
+.page-hero__title {
+    margin-bottom: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.page-hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-neutral-600);
+    max-width: 640px;
+}
+
+.page-hero .breadcrumbs {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.page-hero .breadcrumbs__link {
+    color: var(--color-neutral-600);
+}
+
+@media (min-width: 768px) {
+    .page-hero {
+        padding-top: var(--space-20);
+    }
+
+    .page-hero__title {
+        margin-top: var(--space-12);
+    }
+}
+
+/* ========================================
+   GENERIC SECTIONS (interior pages)
+   ======================================== */
+
+.section {
+    padding: var(--space-20) 0;
+}
+
+.section--alt {
+    background-color: var(--color-neutral-50);
+}
+
+.mv-grid,
+.values-grid,
+.impact-grid {
+    gap: var(--space-8);
+}
+
+.check-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    max-width: 560px;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: var(--space-8);
+    color: var(--color-neutral-700);
+}
+
+.check-list li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--space-6);
+    height: var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-700);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+}
+
+@media (min-width: 640px) {
+    .check-list {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: none;
+    }
+}
+
+/* Program blocks */
+.program-block__inner {
+    max-width: 800px;
+}
+
+.program-block__icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-6);
+}
+
+.program-block__text {
+    font-size: var(--text-lg);
+    color: var(--color-neutral-600);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-8);
+}
+
+/* Impact stories (full-width rows) */
+.story {
+    position: relative;
+    background-color: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-md);
+    border-top: 4px solid transparent;
+    scroll-margin-top: 100px;
+}
+
+.story--education {
+    border-top-color: var(--color-primary-500);
+}
+
+.story--health {
+    border-top-color: var(--color-secondary-500);
+}
+
+.story--youth {
+    border-top-color: var(--color-success);
+}
+
+.featured .story {
+    margin-bottom: var(--space-6);
+}
+
+.featured .story:last-child {
+    margin-bottom: 0;
+}
+
+.story__badge {
+    margin-bottom: var(--space-4);
+}
+
+.story__title {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+}
+
+.story__text {
+    color: var(--color-neutral-600);
+    line-height: var(--leading-relaxed);
+}
+
+@media (min-width: 768px) {
+    .story {
+        padding: var(--space-12);
+    }
+}
+
+/* Donation cards */
+.help-block .impact-grid {
+    margin-bottom: var(--space-8);
+}
+
+.donation-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+}
+
+.donation-card--highlight {
+    border: 2px solid var(--color-primary-500);
+}
+
+.donation-card__badge {
+    position: absolute;
+    top: calc(-1 * var(--space-3));
+    right: var(--space-4);
+}
+
+.donation-card__amount {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-600);
+    margin-bottom: var(--space-2);
+}
+
+.donation-card .card__text {
+    flex-grow: 1;
+}
+
+.volunteer-cta {
+    text-align: center;
+    margin-top: var(--space-12);
+}
+
+/* Reports list */
+.reports-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.report-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.report-item__info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.report-item__title {
+    font-size: var(--text-base);
+    font-family: var(--font-primary);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-1);
+}
+
+.report-item__text {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+}
+
+.report-item__soon {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-400);
+    font-style: italic;
+}
+
+/* Contact section */
+.contact-section__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    align-items: start;
+}
+
+.contact-info > p {
+    color: var(--color-neutral-600);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+}
+
+.contact-info__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.contact-info__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+}
+
+.contact-info__item strong {
+    display: block;
+    margin-bottom: var(--space-1);
+}
+
+.contact-info__item span:not(.contact-info__icon),
+.contact-info__item a {
+    color: var(--color-neutral-600);
+    font-size: var(--text-base);
+}
+
+.contact-info__icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+}
+
+.contact-form h3 {
+    margin-bottom: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+    .contact-section__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ========================================
    CTA
    ======================================== */
 

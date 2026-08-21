@@ -18,7 +18,36 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormValidation();
     initAnimations();
     initCounters();
+    initDonationButtons();
 });
+
+// ========================================
+// DONATION BUTTONS
+// ========================================
+
+function initDonationButtons() {
+    const buttons = document.querySelectorAll('.js-donate');
+    const feedback = document.getElementById('donation-feedback');
+    
+    if (!buttons.length || !feedback) return;
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const amount = this.dataset.amount;
+            const paragraph = feedback.querySelector('p') || feedback;
+            
+            feedback.hidden = false;
+            feedback.setAttribute('tabindex', '-1');
+            feedback.focus({ preventScroll: false });
+            feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Update message with selected amount
+            if (paragraph !== feedback) {
+                paragraph.textContent = `Gracias por querer donar ${amount}€. La pasarela de pago se integrará próximamente; escríbenos a info@fortunekids.org y te indicamos cómo completar tu donación.`;
+            }
+        });
+    });
+}
 
 // ========================================
 // MOBILE MENU
