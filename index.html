@@ -21,19 +21,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Skip link (accesibilidad) -->
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
     <!-- Header -->
     <header class="header">
-        <div class="container">
+        <div class="container header__container">
             <div class="header__logo">
-                <a href="index.html">
-                    <img src="assets/images/logo.svg" alt="Fortune Kids" class="header__logo-img">
+                <a href="index.html" aria-label="Fortune Kids - Inicio">
+                    <img src="assets/images/logo.svg" alt="" width="120" height="40" class="header__logo-img">
                 </a>
             </div>
             
-            <nav class="header__nav">
+            <nav id="menu-principal" class="header__nav" aria-label="Navegación principal">
                 <ul class="header__nav-list">
                     <li class="header__nav-item">
-                        <a href="index.html" class="header__nav-link active">Inicio</a>
+                        <a href="index.html" class="header__nav-link active" aria-current="page">Inicio</a>
                     </li>
                     <li class="header__nav-item">
                         <a href="pages/quienes-somos.html" class="header__nav-link">Quiénes somos</a>
@@ -56,39 +59,42 @@
                 </ul>
             </nav>
             
-            <button class="header__menu-toggle" aria-label="Abrir menú">
+            <button class="header__menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+
+            <a href="pages/como-ayudar.html#donar" class="btn btn--primary btn--sm header__cta">Donar</a>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main id="contenido-principal">
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" aria-labelledby="hero-title">
             <div class="container">
                 <div class="hero__content">
-                    <h1 class="hero__title">Cada niño merece la oportunidad de aprender, crecer y construir un futuro</h1>
-                    <p class="hero__subtitle">Fortune Kids trabaja con niños, jóvenes y comunidades locales en Arusha, Tanzania, apoyando el acceso a educación, salud y oportunidades.</p>
+                    <p class="hero__eyebrow">Organización sin ánimo de lucro · Arusha, Tanzania</p>
+                    <h1 id="hero-title" class="hero__title">Cada niño merece la oportunidad de aprender, crecer y construir su futuro</h1>
+                    <p class="hero__subtitle">Trabajamos con niños, jóvenes y comunidades locales en Arusha apoyando el acceso a educación, salud y oportunidades reales.</p>
                     <div class="hero__buttons">
-                        <a href="pages/como-ayudar.html" class="btn btn--primary">Apoyar nuestro trabajo</a>
-                        <a href="pages/impacto.html" class="btn btn--secondary">Ver nuestro impacto</a>
+                        <a href="pages/como-ayudar.html" class="btn btn--primary btn--lg">Apoyar nuestro trabajo</a>
+                        <a href="pages/impacto.html" class="btn btn--secondary btn--lg">Ver nuestro impacto</a>
                     </div>
                 </div>
                 <div class="hero__image">
-                    <img src="assets/images/hero.jpg" alt="Niños de Fortune Kids en Tanzania">
+                    <img src="assets/images/hero.jpg" alt="Niños sonriendo durante una actividad educativa de Fortune Kids en Arusha" width="640" height="480" fetchpriority="high">
                 </div>
             </div>
         </section>
 
         <!-- Stats Section -->
-        <section class="stats">
+        <section class="stats" aria-label="Datos clave de la organización">
             <div class="container">
                 <div class="stats__grid">
                     <div class="stats__item">
-                        <span class="stats__number">11</span>
+                        <span class="stats__number" data-counter="11">11</span>
                         <span class="stats__label">Niños apoyados actualmente</span>
                     </div>
                     <div class="stats__item">
@@ -96,7 +102,7 @@
                         <span class="stats__label">Año de fundación</span>
                     </div>
                     <div class="stats__item">
-                        <span class="stats__number">3</span>
+                        <span class="stats__number" data-counter="3">3</span>
                         <span class="stats__label">Programas activos</span>
                     </div>
                     <div class="stats__item">
@@ -107,50 +113,112 @@
             </div>
         </section>
 
-        <!-- Programs Section -->
-        <section class="programs">
+        <!-- Categories Section (FK-023) -->
+        <section class="categories" id="categorias" aria-labelledby="categorias-title">
             <div class="container">
-                <h2 class="section-title">Nuestros programas</h2>
-                <div class="programs__grid">
-                    <div class="programs__card">
-                        <div class="programs__card-icon">
-                            <img src="assets/icons/education.svg" alt="Educación">
+                <h2 id="categorias-title" class="section-title">Nuestras áreas de acción</h2>
+                <p class="section-intro">Tres líneas de trabajo que se complementan para transformar vidas y comunidades.</p>
+                
+                <div class="categories__grid">
+                    <article class="category-card">
+                        <div class="category-card__icon category-card__icon--primary" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
                         </div>
-                        <h3 class="programs__card-title">Educación y protección infantil</h3>
-                        <p class="programs__card-text">Programas educativos que aseguran el acceso, permanencia y calidad de la educación para niños y niñas.</p>
-                        <a href="pages/que-hacemos.html#educacion" class="programs__card-link">Más información →</a>
-                    </div>
-                    
-                    <div class="programs__card">
-                        <div class="programs__card-icon">
-                            <img src="assets/icons/health.svg" alt="Salud">
+                        <h3 class="category-card__title">Educación y protección infantil</h3>
+                        <p class="category-card__text">Programas educativos que aseguran el acceso, la permanencia y la calidad de la educación para niños y niñas.</p>
+                        <a href="pages/que-hacemos.html#educacion" class="category-card__link">
+                            Más información
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <span class="visually-hidden">sobre Educación y protección infantil</span>
+                        </a>
+                    </article>
+
+                    <article class="category-card">
+                        <div class="category-card__icon category-card__icon--secondary" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
                         </div>
-                        <h3 class="programs__card-title">Salud y bienestar</h3>
-                        <p class="programs__card-text">Atención sanitaria y programas de bienestar para niños y comunidades.</p>
-                        <a href="pages/que-hacemos.html#salud" class="programs__card-link">Más información →</a>
-                    </div>
-                    
-                    <div class="programs__card">
-                        <div class="programs__card-icon">
-                            <img src="assets/icons/youth.svg" alt="Juventud">
+                        <h3 class="category-card__title">Salud y bienestar</h3>
+                        <p class="category-card__text">Atención sanitaria y programas de bienestar para niños, familias y comunidades de Arusha.</p>
+                        <a href="pages/que-hacemos.html#salud" class="category-card__link">
+                            Más información
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <span class="visually-hidden">sobre Salud y bienestar</span>
+                        </a>
+                    </article>
+
+                    <article class="category-card">
+                        <div class="category-card__icon category-card__icon--tertiary" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1c0-4 3.6-6 8-6s8 2 8 6v1"/></svg>
                         </div>
-                        <h3 class="programs__card-title">Juventud y formación</h3>
-                        <p class="programs__card-text">Formación profesional, empleo y emprendimiento para jóvenes.</p>
-                        <a href="pages/que-hacemos.html#juventud" class="programs__card-link">Más información →</a>
+                        <h3 class="category-card__title">Juventud y formación</h3>
+                        <p class="category-card__text">Formación profesional, empleo joven y emprendimiento para construir autonomía real.</p>
+                        <a href="pages/que-hacemos.html#juventud" class="category-card__link">
+                            Más información
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <span class="visually-hidden">sobre Juventud y formación</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Content Section (FK-024) -->
+        <section class="featured" aria-labelledby="featured-title">
+            <div class="container">
+                <div class="featured__header">
+                    <div>
+                        <h2 id="featured-title" class="section-title section-title--left">Historias destacadas</h2>
+                        <p class="section-intro section-intro--left">Momentos reales que muestran el impacto de vuestro apoyo.</p>
                     </div>
+                    <a href="pages/impacto.html" class="btn btn--ghost featured__more">Ver todas las historias</a>
+                </div>
+
+                <div class="featured__grid">
+                    <article class="card story-card">
+                        <div class="story-card__media story-card__media--education">
+                            <span class="badge badge--primary story-card__badge">Educación</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Amina vuelve a clase tras un año sin escolarizar</h3>
+                            <p class="card__text">Gracias al programa de becas, Amina ha retomado sus estudios y sueña con ser profesora.</p>
+                            <a href="pages/impacto.html#historia-amina" class="card__link">Leer historia →</a>
+                        </div>
+                    </article>
+
+                    <article class="card story-card">
+                        <div class="story-card__media story-card__media--health">
+                            <span class="badge badge--secondary story-card__badge">Salud</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Campaña de revisiones médicas alcanza a 40 familias</h3>
+                            <p class="card__text">El equipo local completó una nueva ronda de controles de salud para los niños del programa.</p>
+                            <a href="pages/impacto.html#historia-salud" class="card__link">Leer historia →</a>
+                        </div>
+                    </article>
+
+                    <article class="card story-card">
+                        <div class="story-card__media story-card__media--youth">
+                            <span class="badge badge--info story-card__badge">Juventud</span>
+                        </div>
+                        <div class="card__content">
+                            <h3 class="card__title">Primeros jóvenes del programa inician su propio negocio</h3>
+                            <p class="card__text">Dos alumnos de formación profesional abren un taller de costura en el centro de Arusha.</p>
+                            <a href="pages/impacto.html#historia-youth" class="card__link">Leer historia →</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta">
+        <section class="cta" aria-labelledby="cta-title">
             <div class="container">
                 <div class="cta__content">
-                    <h2 class="cta__title">¿Cómo puedes ayudar?</h2>
+                    <h2 id="cta-title" class="cta__title">¿Cómo puedes ayudar?</h2>
                     <p class="cta__text">Hay muchas formas de apoyar nuestro trabajo. Desde donaciones hasta voluntariado, cada aportación marca la diferencia.</p>
                     <div class="cta__buttons">
-                        <a href="pages/como-ayudar.html#donar" class="btn btn--primary">Hacer una donación</a>
-                        <a href="pages/como-ayudar.html#voluntariado" class="btn btn--secondary">Ser voluntario</a>
+                        <a href="pages/como-ayudar.html#donar" class="btn btn--white btn--lg">Hacer una donación</a>
+                        <a href="pages/como-ayudar.html#voluntariado" class="btn btn--secondary cta__btn-secondary btn--lg">Ser voluntario</a>
                     </div>
                 </div>
             </div>
@@ -180,19 +248,18 @@
                     <h4 class="footer__subtitle">Contacto</h4>
                     <ul class="footer__contact">
                         <li>Arusha, Tanzania</li>
-                        <li>info@fortunekids.org</li>
-                        <li>+255 XXX XXX XXX</li>
+                        <li><a href="mailto:info@fortunekids.org">info@fortunekids.org</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer__col">
                     <h4 class="footer__subtitle">Síguenos</h4>
                     <div class="footer__social">
-                        <a href="#" class="footer__social-link" aria-label="Instagram">
-                            <img src="assets/icons/instagram.svg" alt="Instagram">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram de Fortune Kids">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
                         </a>
-                        <a href="#" class="footer__social-link" aria-label="Facebook">
-                            <img src="assets/icons/facebook.svg" alt="Facebook">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook de Fortune Kids">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         </a>
                     </div>
                 </div>
@@ -200,11 +267,11 @@
             
             <div class="footer__bottom">
                 <p>&copy; 2026 Fortune Kids. Todos los derechos reservados.</p>
-                <div class="footer__legal">
+                <nav class="footer__legal" aria-label="Enlaces legales">
                     <a href="pages/politica-privacidad.html">Política de privacidad</a>
                     <a href="pages/politica-cookies.html">Política de cookies</a>
                     <a href="pages/safeguarding.html">Protección infantil</a>
-                </div>
+                </nav>
             </div>
         </div>
     </footer>

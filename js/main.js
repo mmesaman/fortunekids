@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initModals();
     initFormValidation();
     initAnimations();
+    initCounters();
 });
 
 // ========================================
@@ -29,30 +30,49 @@ function initMobileMenu() {
     
     if (!menuToggle || !nav) return;
     
+    function closeMenu() {
+        menuToggle.classList.remove('active');
+        nav.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú');
+    }
+    
     menuToggle.addEventListener('click', function() {
-        this.classList.toggle('active');
-        nav.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
+        const isOpen = nav.classList.toggle('active');
+        this.classList.toggle('active', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+        this.setAttribute('aria-expanded', String(isOpen));
+        this.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
     });
     
     // Close menu when clicking on a link
     const navLinks = nav.querySelectorAll('.header__nav-link');
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            menuToggle.classList.remove('active');
-            nav.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        });
+        link.addEventListener('click', closeMenu);
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!menuToggle.contains(e.target) && !nav.contains(e.target)) {
-            menuToggle.classList.remove('active');
-            nav.classList.remove('active');
-            document.body.classList.remove('menu-open');
+        if (nav.classList.contains('active') && !menuToggle.contains(e.target) && !nav.contains(e.target)) {
+            closeMenu();
         }
     });
+
+    // Close menu with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+            closeMenu();
+            menuToggle.focus();
+        }
+    });
+
+    // Reset state if viewport grows past desktop breakpoint
+    window.addEventListener('resize', debounce(function() {
+        if (window.innerWidth >= 1024) {
+            closeMenu();
+        }
+    }, 150));
 }
 
 // ========================================
