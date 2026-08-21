@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Historias, noticias y recursos de Fortune Kids en Arusha, Tanzania">
+    <title>Contenido | Fortune Kids</title>
+    
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="../index.html" aria-label="Fortune Kids - Inicio">
+                    <img src="../assets/images/logo.svg" alt="" width="120" height="40" class="header__logo-img">
+                </a>
+            </div>
+            
+            <nav id="menu-principal" class="header__nav" aria-label="Navegación principal">
+                <ul class="header__nav-list">
+                    <li><a href="../index.html" class="header__nav-link">Inicio</a></li>
+                    <li><a href="quienes-somos.html" class="header__nav-link">Quiénes somos</a></li>
+                    <li><a href="que-hacemos.html" class="header__nav-link">Qué hacemos</a></li>
+                    <li><a href="impacto.html" class="header__nav-link active" aria-current="page">Nuestro impacto</a></li>
+                    <li><a href="como-ayudar.html" class="header__nav-link">Cómo ayudar</a></li>
+                    <li><a href="transparencia.html" class="header__nav-link">Transparencia</a></li>
+                    <li><a href="contacto.html" class="header__nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <button class="header__menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="como-ayudar.html#donar" class="btn btn--primary btn--sm header__cta">Donar</a>
+        </div>
+    </header>
+
+    <main id="contenido-principal">
+        <!-- Page Hero -->
+        <section class="page-hero page-hero--detail">
+            <div class="container">
+                <nav class="breadcrumbs" aria-label="Migas de pan">
+                    <ol class="breadcrumbs__list">
+                        <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Inicio</a></li>
+                        <li class="breadcrumbs__item" id="breadcrumb-categoria"></li>
+                        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Artículo</span></li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Article -->
+        <article class="section detail" aria-label="Contenido del artículo">
+            <div class="container detail__inner">
+                <header id="detalle-meta" class="detail__meta"></header>
+                <h1 id="detalle-titulo" class="detail__title"></h1>
+                <div id="detalle-cuerpo" class="detail__body"></div>
+
+                <footer class="detail__footer">
+                    <a href="contenidos.html" class="btn btn--ghost">← Volver a historias y noticias</a>
+                </footer>
+            </div>
+        </article>
+
+        <!-- Related -->
+        <section id="relacionados-section" class="section section--alt related" aria-labelledby="relacionados-title">
+            <div class="container">
+                <h2 id="relacionados-title" class="section-title section-title--left">También te puede interesar</h2>
+                <div id="relacionados-grid" class="content-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Fortune Kids</h3>
+                    <p class="footer__text">Organización local en Arusha, Tanzania, trabajando por el desarrollo de niños, jóvenes y comunidades.</p>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                        <li><a href="que-hacemos.html">Qué hacemos</a></li>
+                        <li><a href="impacto.html">Nuestro impacto</a></li>
+                        <li><a href="contenidos.html">Historias y noticias</a></li>
+                        <li><a href="transparencia.html">Transparencia</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Contacto</h4>
+                    <ul class="footer__contact">
+                        <li>Arusha, Tanzania</li>
+                        <li><a href="mailto:info@fortunekids.org">info@fortunekids.org</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Síguenos</h4>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram de Fortune Kids">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook de Fortune Kids">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 Fortune Kids. Todos los derechos reservados.</p>
+                <nav class="footer__legal" aria-label="Enlaces legales">
+                    <a href="politica-privacidad.html">Política de privacidad</a>
+                    <a href="politica-cookies.html">Política de cookies</a>
+                    <a href="safeguarding.html">Protección infantil</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/catalogo.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
