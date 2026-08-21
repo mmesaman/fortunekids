@@ -94,19 +94,13 @@ Breakpoints definidos:
 
 ## Próximos Pasos
 
-1. ✅ Definir estructura inicial del proyecto
-2. ✅ Crear estructura de carpetas
-3. ✅ Configurar HTML5 base
-4. ✅ Configurar CSS base
-5. ✅ Configurar sistema de diseño y variables CSS
-6. ✅ Configurar tipografías
-7. ✅ Crear estructura base de navegación
-8. ✅ Crear README del proyecto
-9. ⏳ Definir arquitectura general de la web
-10. ⏳ Definir mapa de páginas
-11. ⏳ Implementar páginas interiores
-12. ⏳ Añadir contenido real
-13. ⏳ Optimizar y publicar
+1. ✅ Definir estructura inicial del proyecto (FK-001..008)
+2. ✅ Arquitectura y sistemas de diseño documentados (FK-010..019)
+3. ✅ Página Home completa con todas sus secciones (FK-020..030)
+4. ⏳ Implementar navegación entre páginas (FK-040..045)
+5. ⏳ Implementar páginas interiores (FK-050..)
+6. ⏳ Añadir contenido real
+7. ⏳ Optimizar y publicar
 
 ## Licencia
 
