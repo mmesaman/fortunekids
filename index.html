@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fortune Kids - Educación y oportunidades para niños en Arusha, Tanzania">
+    <title>Fortune Kids | Educación y futuro para niños en Tanzania</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.svg" alt="Fortune Kids" class="header__logo-img">
+                </a>
+            </div>
+            
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="index.html" class="header__nav-link active">Inicio</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="pages/quienes-somos.html" class="header__nav-link">Quiénes somos</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="pages/que-hacemos.html" class="header__nav-link">Qué hacemos</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="pages/impacto.html" class="header__nav-link">Nuestro impacto</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="pages/como-ayudar.html" class="header__nav-link">Cómo ayudar</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="pages/transparencia.html" class="header__nav-link">Transparencia</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="pages/contacto.html" class="header__nav-link">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button class="header__menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Cada niño merece la oportunidad de aprender, crecer y construir un futuro</h1>
+                    <p class="hero__subtitle">Fortune Kids trabaja con niños, jóvenes y comunidades locales en Arusha, Tanzania, apoyando el acceso a educación, salud y oportunidades.</p>
+                    <div class="hero__buttons">
+                        <a href="pages/como-ayudar.html" class="btn btn--primary">Apoyar nuestro trabajo</a>
+                        <a href="pages/impacto.html" class="btn btn--secondary">Ver nuestro impacto</a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <img src="assets/images/hero.jpg" alt="Niños de Fortune Kids en Tanzania">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats__grid">
+                    <div class="stats__item">
+                        <span class="stats__number">11</span>
+                        <span class="stats__label">Niños apoyados actualmente</span>
+                    </div>
+                    <div class="stats__item">
+                        <span class="stats__number">2017</span>
+                        <span class="stats__label">Año de fundación</span>
+                    </div>
+                    <div class="stats__item">
+                        <span class="stats__number">3</span>
+                        <span class="stats__label">Programas activos</span>
+                    </div>
+                    <div class="stats__item">
+                        <span class="stats__number">7+</span>
+                        <span class="stats__label">Años de experiencia</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section class="programs">
+            <div class="container">
+                <h2 class="section-title">Nuestros programas</h2>
+                <div class="programs__grid">
+                    <div class="programs__card">
+                        <div class="programs__card-icon">
+                            <img src="assets/icons/education.svg" alt="Educación">
+                        </div>
+                        <h3 class="programs__card-title">Educación y protección infantil</h3>
+                        <p class="programs__card-text">Programas educativos que aseguran el acceso, permanencia y calidad de la educación para niños y niñas.</p>
+                        <a href="pages/que-hacemos.html#educacion" class="programs__card-link">Más información →</a>
+                    </div>
+                    
+                    <div class="programs__card">
+                        <div class="programs__card-icon">
+                            <img src="assets/icons/health.svg" alt="Salud">
+                        </div>
+                        <h3 class="programs__card-title">Salud y bienestar</h3>
+                        <p class="programs__card-text">Atención sanitaria y programas de bienestar para niños y comunidades.</p>
+                        <a href="pages/que-hacemos.html#salud" class="programs__card-link">Más información →</a>
+                    </div>
+                    
+                    <div class="programs__card">
+                        <div class="programs__card-icon">
+                            <img src="assets/icons/youth.svg" alt="Juventud">
+                        </div>
+                        <h3 class="programs__card-title">Juventud y formación</h3>
+                        <p class="programs__card-text">Formación profesional, empleo y emprendimiento para jóvenes.</p>
+                        <a href="pages/que-hacemos.html#juventud" class="programs__card-link">Más información →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">¿Cómo puedes ayudar?</h2>
+                    <p class="cta__text">Hay muchas formas de apoyar nuestro trabajo. Desde donaciones hasta voluntariado, cada aportación marca la diferencia.</p>
+                    <div class="cta__buttons">
+                        <a href="pages/como-ayudar.html#donar" class="btn btn--primary">Hacer una donación</a>
+                        <a href="pages/como-ayudar.html#voluntariado" class="btn btn--secondary">Ser voluntario</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Fortune Kids</h3>
+                    <p class="footer__text">Organización local en Arusha, Tanzania, trabajando por el desarrollo de niños, jóvenes y comunidades.</p>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li><a href="pages/quienes-somos.html">Quiénes somos</a></li>
+                        <li><a href="pages/que-hacemos.html">Qué hacemos</a></li>
+                        <li><a href="pages/impacto.html">Nuestro impacto</a></li>
+                        <li><a href="pages/transparencia.html">Transparencia</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Contacto</h4>
+                    <ul class="footer__contact">
+                        <li>Arusha, Tanzania</li>
+                        <li>info@fortunekids.org</li>
+                        <li>+255 XXX XXX XXX</li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h4 class="footer__subtitle">Síguenos</h4>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <img src="assets/icons/instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <img src="assets/icons/facebook.svg" alt="Facebook">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 Fortune Kids. Todos los derechos reservados.</p>
+                <div class="footer__legal">
+                    <a href="pages/politica-privacidad.html">Política de privacidad</a>
+                    <a href="pages/politica-cookies.html">Política de cookies</a>
+                    <a href="pages/safeguarding.html">Protección infantil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

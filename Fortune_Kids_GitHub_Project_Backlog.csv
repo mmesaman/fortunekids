@@ -1,0 +1,105 @@
+﻿Title,Description,Phase,Priority,Status,Labels,Task ID
+[FK-001] Definir estructura inicial del proyecto,Fase: Preparación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Preparación,P0,In Review,"fortune-kids,fase-0",FK-001
+[FK-002] Crear estructura de carpetas del proyecto,Fase: Preparación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Preparación,P0,In Review,"fortune-kids,fase-0",FK-002
+[FK-003] Configurar HTML5 base,Fase: Preparación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Preparación,P0,In Review,"fortune-kids,fase-0",FK-003
+[FK-004] Configurar CSS base,Fase: Preparación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Preparación,P0,In Review,"fortune-kids,fase-0",FK-004
+[FK-005] Configurar sistema de diseño y variables CSS,Fase: Preparación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Preparación,P0,In Review,"fortune-kids,fase-0",FK-005
+[FK-006] Configurar tipografías,Fase: Preparación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Preparación,P0,In Review,"fortune-kids,fase-0",FK-006
+[FK-007] Crear estructura base de navegación,Fase: Preparación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Preparación,P0,In Review,"fortune-kids,fase-0",FK-007
+[FK-008] Crear README del proyecto,Fase: Preparación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Preparación,P0,In Review,"fortune-kids,fase-0",FK-008
+[FK-010] Definir arquitectura general de la web,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-010
+[FK-011] Definir mapa de páginas,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-011
+[FK-012] Definir estructura del Header,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-012
+[FK-013] Definir estructura del menú de navegación,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-013
+[FK-014] Definir estructura del Footer,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-014
+[FK-015] Definir sistema de botones,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-015
+[FK-016] Definir sistema de tarjetas,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-016
+[FK-017] Definir sistema de etiquetas y badges,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-017
+[FK-018] Definir sistema de espaciados,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-018
+[FK-019] Definir sistema responsive,Fase: Arquitectura y diseño. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Arquitectura y diseño,P0,Backlog,"fortune-kids,fase-1",FK-019
+[FK-020] Crear estructura de la página Home,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-020
+[FK-021] Implementar Header de la Home,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-021
+[FK-022] Implementar Hero principal,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-022
+[FK-023] Implementar sección de categorías,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-023
+[FK-024] Implementar sección de contenidos destacados,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-024
+[FK-025] Implementar sección de recomendaciones,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-025
+[FK-026] Implementar llamadas a la acción,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-026
+[FK-027] Implementar Footer,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-027
+[FK-028] Adaptar Home a móvil,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-028
+[FK-029] Adaptar Home a tablet,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-2",FK-029
+[FK-030] Adaptar Home a escritorio,Fase: Home. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Home,P0,Backlog,"fortune-kids,fase-3",FK-030
+[FK-040] Implementar navegación principal,Fase: Navegación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Navegación,P1,Backlog,"fortune-kids,fase-4",FK-040
+[FK-041] Implementar menú móvil,Fase: Navegación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Navegación,P1,Backlog,"fortune-kids,fase-4",FK-041
+[FK-042] Implementar navegación entre páginas,Fase: Navegación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Navegación,P1,Backlog,"fortune-kids,fase-4",FK-042
+[FK-043] Implementar breadcrumbs,Fase: Navegación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Navegación,P1,Backlog,"fortune-kids,fase-4",FK-043
+[FK-044] Implementar estados hover y active,Fase: Navegación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Navegación,P1,Backlog,"fortune-kids,fase-4",FK-044
+[FK-045] Comprobar navegación completa de la web,Fase: Navegación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Navegación,P1,Backlog,"fortune-kids,fase-4",FK-045
+[FK-050] Crear plantilla de página de categoría,Fase: Páginas de contenido. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Páginas de contenido,P1,Backlog,"fortune-kids,fase-5",FK-050
+[FK-051] Crear plantilla de listado de contenidos,Fase: Páginas de contenido. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Páginas de contenido,P1,Backlog,"fortune-kids,fase-5",FK-051
+[FK-052] Crear plantilla de detalle de contenido,Fase: Páginas de contenido. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Páginas de contenido,P1,Backlog,"fortune-kids,fase-5",FK-052
+[FK-053] Crear tarjetas reutilizables de contenido,Fase: Páginas de contenido. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Páginas de contenido,P1,Backlog,"fortune-kids,fase-5",FK-053
+[FK-054] Crear sistema de filtros,Fase: Páginas de contenido. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Páginas de contenido,P1,Backlog,"fortune-kids,fase-5",FK-054
+[FK-055] Crear sistema de ordenación,Fase: Páginas de contenido. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Páginas de contenido,P1,Backlog,"fortune-kids,fase-5",FK-055
+[FK-056] Crear paginación o carga progresiva,Fase: Páginas de contenido. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Páginas de contenido,P1,Backlog,"fortune-kids,fase-5",FK-056
+[FK-057] Adaptar páginas de contenido a móvil,Fase: Páginas de contenido. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Páginas de contenido,P1,Backlog,"fortune-kids,fase-5",FK-057
+[FK-060] Crear interfaz de búsqueda,Fase: Búsqueda. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Búsqueda,P2,Backlog,"fortune-kids,fase-6",FK-060
+[FK-061] Implementar buscador,Fase: Búsqueda. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Búsqueda,P2,Backlog,"fortune-kids,fase-6",FK-061
+[FK-062] Crear página de resultados,Fase: Búsqueda. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Búsqueda,P2,Backlog,"fortune-kids,fase-6",FK-062
+[FK-063] Implementar estados sin resultados,Fase: Búsqueda. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Búsqueda,P2,Backlog,"fortune-kids,fase-6",FK-063
+[FK-064] Adaptar búsqueda a móvil,Fase: Búsqueda. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Búsqueda,P2,Backlog,"fortune-kids,fase-6",FK-064
+[FK-070] Crear componente Card,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-070
+[FK-071] Crear componente Button,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-071
+[FK-072] Crear componente Badge,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-072
+[FK-073] Crear componente Modal,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-073
+[FK-074] Crear componente Dropdown,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-074
+[FK-075] Crear componente Tabs,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-075
+[FK-076] Crear componente Breadcrumbs,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-076
+[FK-077] Crear componente Pagination,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-077
+[FK-078] Crear componentes de formularios,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-078
+[FK-079] Crear sistema de estados de componentes,Fase: Componentes reutilizables. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Componentes reutilizables,P1,Backlog,"fortune-kids,fase-7",FK-079
+[FK-080] Revisar diseño responsive global,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-080
+[FK-081] Revisar navegación en móvil,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-081
+[FK-082] Revisar tamaños de texto,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-082
+[FK-083] Revisar espaciados,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-083
+[FK-084] Revisar interacción táctil,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-084
+[FK-085] Revisar accesibilidad básica,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-085
+[FK-086] Revisar contraste de colores,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-086
+[FK-087] Revisar estados de carga,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-087
+[FK-088] Revisar estados de error,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-088
+[FK-089] Revisar estados vacíos,Fase: Responsive y UX. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Responsive y UX,P2,Backlog,"fortune-kids,fase-8",FK-089
+[FK-090] Configurar title y meta description,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-090
+[FK-091] Configurar Open Graph,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-091
+[FK-092] Revisar estructura semántica HTML,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-092
+[FK-093] Configurar favicon,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-093
+[FK-094] Optimizar imágenes,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-094
+[FK-095] Revisar carga de fuentes,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-095
+[FK-096] Optimizar CSS y JavaScript,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-096
+[FK-097] Revisar Core Web Vitals,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-097
+[FK-098] Crear sitemap,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-098
+[FK-099] Crear robots.txt,Fase: SEO y rendimiento. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,SEO y rendimiento,P3,Backlog,"fortune-kids,fase-9",FK-099
+[FK-100] Introducir contenidos reales,Fase: Contenido real. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Contenido real,P3,Backlog,"fortune-kids,fase-10",FK-100
+[FK-101] Introducir imágenes definitivas,Fase: Contenido real. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Contenido real,P3,Backlog,"fortune-kids,fase-10",FK-101
+[FK-102] Introducir categorías definitivas,Fase: Contenido real. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Contenido real,P3,Backlog,"fortune-kids,fase-10",FK-102
+[FK-103] Introducir textos definitivos,Fase: Contenido real. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Contenido real,P3,Backlog,"fortune-kids,fase-10",FK-103
+[FK-104] Revisar enlaces internos,Fase: Contenido real. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Contenido real,P3,Backlog,"fortune-kids,fase-10",FK-104
+[FK-105] Revisar contenido duplicado,Fase: Contenido real. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Contenido real,P3,Backlog,"fortune-kids,fase-10",FK-105
+[FK-106] Revisar contenido en móvil,Fase: Contenido real. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Contenido real,P3,Backlog,"fortune-kids,fase-10",FK-106
+[FK-110] Test funcional de navegación,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-110
+[FK-111] Test de Home,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-111
+[FK-112] Test de páginas de contenido,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-112
+[FK-113] Test de búsqueda,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-113
+[FK-114] Test responsive,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-114
+[FK-115] Test en Chrome,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-115
+[FK-116] Test en Edge,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-116
+[FK-117] Test en Safari,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-117
+[FK-118] Test en móvil,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-118
+[FK-119] Corrección de errores encontrados,Fase: Testing. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Testing,P3,Backlog,"fortune-kids,fase-11",FK-119
+[FK-120] Preparar build de producción,Fase: Publicación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Publicación,P3,Backlog,"fortune-kids,fase-12",FK-120
+[FK-121] Configurar hosting,Fase: Publicación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Publicación,P3,Backlog,"fortune-kids,fase-12",FK-121
+[FK-122] Configurar dominio,Fase: Publicación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Publicación,P3,Backlog,"fortune-kids,fase-12",FK-122
+[FK-123] Configurar HTTPS,Fase: Publicación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Publicación,P3,Backlog,"fortune-kids,fase-12",FK-123
+[FK-124] Configurar despliegue,Fase: Publicación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Publicación,P3,Backlog,"fortune-kids,fase-12",FK-124
+[FK-125] Configurar analítica,Fase: Publicación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Publicación,P3,Backlog,"fortune-kids,fase-12",FK-125
+[FK-126] Realizar publicación inicial,Fase: Publicación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Publicación,P3,Backlog,"fortune-kids,fase-12",FK-126
+[FK-127] Verificar web en producción,Fase: Publicación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Publicación,P3,Backlog,"fortune-kids,fase-12",FK-127
+[FK-128] Crear procedimiento de despliegue,Fase: Publicación. Implementar y dejar validada esta tarea dentro del desarrollo de Fortune Kids.,Publicación,P3,Backlog,"fortune-kids,fase-12",FK-128
