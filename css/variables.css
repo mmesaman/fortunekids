@@ -49,6 +49,10 @@
     --color-error: #ef4444;
     --color-info: #3b82f6;
     
+    /* Base Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    
     /* ========================================
        TYPOGRAPHY
        ======================================== */
