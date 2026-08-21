@@ -65,7 +65,19 @@
                 <span></span>
             </button>
 
+            <button type="button" class="header__search-toggle" aria-label="Abrir búsqueda" aria-expanded="false" aria-controls="panel-busqueda">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </button>
+
             <a href="pages/como-ayudar.html#donar" class="btn btn--primary btn--sm header__cta">Donar</a>
+        </div>
+
+        <div id="panel-busqueda" class="header__search-panel" hidden>
+            <form class="header__search-form container" action="pages/busqueda.html" method="get" role="search">
+                <label for="q-header" class="visually-hidden">Buscar en el sitio</label>
+                <input type="search" id="q-header" name="q" class="header__search-input" placeholder="Buscar historias, noticias…" autocomplete="off">
+                <button type="submit" class="btn btn--primary btn--sm">Buscar</button>
+            </form>
         </div>
     </header>
 

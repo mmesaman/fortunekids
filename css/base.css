@@ -459,6 +459,81 @@ select {
     display: none;
 }
 
+/* Header search */
+.header__search-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    color: var(--color-neutral-700);
+    background-color: transparent;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.header__search-toggle:hover {
+    color: var(--color-primary-600);
+    background-color: var(--color-neutral-100);
+}
+
+.header__search-toggle[aria-expanded="true"] {
+    color: var(--color-white);
+    background-color: var(--color-primary-600);
+}
+
+.header__search-toggle:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+}
+
+.header__search-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: var(--space-4) 0;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-neutral-200);
+    box-shadow: var(--shadow-lg);
+}
+
+.header__search-form {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-2);
+}
+
+.header__search-form .btn {
+    flex-shrink: 0;
+}
+
+.header__search-input {
+    flex: 1;
+    min-width: 0;
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-base);
+    font-family: inherit;
+    color: var(--color-neutral-900);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-neutral-300);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.header__search-input:focus {
+    outline: none;
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.header__search-input::placeholder {
+    color: var(--color-neutral-400);
+}
+
 /* Mobile menu drawer */
 @media (max-width: 1023px) {
     .header__nav.active {
@@ -1395,6 +1470,33 @@ main {
 .empty-state p {
     max-width: 420px;
     margin: 0 auto var(--space-6);
+}
+
+.empty-state__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+/* Search results page */
+.search-page-form {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-2);
+    max-width: 560px;
+    margin-top: var(--space-8);
+}
+
+.search-page-form .btn {
+    flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+    .search-page-form .btn {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+    }
 }
 
 /* Detail page */

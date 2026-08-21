@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounters();
     initDonationButtons();
     initBackToTop();
+    initSearch();
 });
 
 // ========================================

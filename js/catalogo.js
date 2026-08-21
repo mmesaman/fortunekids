@@ -299,6 +299,74 @@ const FKCatalog = (function () {
     }
 
     // ----------------------------------------
+    // Vista: búsqueda (FK-060..063)
+    // ----------------------------------------
+
+    function searchItems(q) {
+        const tokens = q.toLowerCase().split(/\s+/).filter(Boolean);
+        if (!tokens.length) return [];
+        return getItems().filter(function (it) {
+            const cat = FK_CATEGORIAS[it.categoria] || {};
+            const tipo = FK_TIPOS[it.tipo] || {};
+            const haystack = [it.titulo, it.resumen, cat.nombre || '', tipo.etiqueta || '']
+                .concat(it.contenido)
+                .join(' ')
+                .toLowerCase();
+            return tokens.every(function (t) { return haystack.indexOf(t) !== -1; });
+        });
+    }
+
+    function noResultsHTML(q) {
+        const chips = Object.keys(FK_CATEGORIAS).map(function (slug) {
+            return '<a class="btn btn--secondary btn--sm" href="categoria.html?slug=' + encodeURIComponent(slug) + '">' + escapeHtml(FK_CATEGORIAS[slug].nombre) + '</a>';
+        }).join('');
+        return (
+            '<div class="empty-state">' +
+                '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>' +
+                '<h3>Sin resultados para &ldquo;' + escapeHtml(q) + '&rdquo;</h3>' +
+                '<p>No encontramos contenidos que coincidan con tu búsqueda. Prueba con otras palabras o explora por categoría:</p>' +
+                '<div class="empty-state__links">' + chips + '</div>' +
+            '</div>'
+        );
+    }
+
+    function initSearchPage() {
+        const grid = document.getElementById('busqueda-grid');
+        if (!grid) return;
+
+        const q = (getUrlParam('q') || '').trim();
+        const input = document.getElementById('busqueda-input');
+        const title = document.getElementById('busqueda-title');
+        const counter = document.getElementById('busqueda-counter');
+
+        if (input) input.value = q;
+
+        if (!q) {
+            grid.innerHTML = emptyStateHTML(
+                'Escribe en el buscador lo que quieras encontrar: historias, noticias, recursos o eventos.',
+                'contenidos.html',
+                'Explorar todo el contenido'
+            );
+            return;
+        }
+
+        title.textContent = 'Resultados para \u201C' + q + '\u201D';
+        document.title = 'Búsqueda: ' + q + ' | Fortune Kids';
+        const crumb = document.querySelector('.breadcrumbs__current');
+        if (crumb) crumb.textContent = 'Búsqueda';
+
+        const items = searchItems(q);
+        if (!items.length) {
+            counter.textContent = '';
+            grid.innerHTML = noResultsHTML(q);
+            return;
+        }
+
+        renderCards(grid, items);
+        counter.textContent = items.length === 1 ? '1 resultado' : items.length + ' resultados';
+    }
+
+    // ----------------------------------------
     // Init según página
     // ----------------------------------------
 
@@ -310,6 +378,7 @@ const FKCatalog = (function () {
             initControls();
         }
         initCategory();
+        initSearchPage();
         initDetail();
     }
 
