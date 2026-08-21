@@ -296,6 +296,63 @@ const FKCatalog = (function () {
                 document.getElementById('relacionados-section').hidden = true;
             }
         }
+
+        // Compartir (fase 11)
+        const share = document.getElementById('detalle-share');
+        if (share) {
+            const url = window.location.href;
+            const texto = item.titulo + ' | Fortune Kids';
+            const wa = document.getElementById('share-wa');
+            const fb = document.getElementById('share-fb');
+            const x = document.getElementById('share-x');
+            if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(texto + ' ' + url);
+            if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+            if (x) x.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(texto) + '&url=' + encodeURIComponent(url);
+
+            const copyBtn = document.getElementById('share-copy');
+            if (copyBtn) {
+                copyBtn.addEventListener('click', function () {
+                    function marcarCopiado() {
+                        copyBtn.classList.add('is-copied');
+                        copyBtn.setAttribute('aria-label', 'Enlace copiado');
+                        setTimeout(function () {
+                            copyBtn.classList.remove('is-copied');
+                            copyBtn.setAttribute('aria-label', 'Copiar enlace');
+                        }, 2000);
+                    }
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(url).then(marcarCopiado, function () {});
+                    } else {
+                        const tmp = document.createElement('input');
+                        tmp.value = url;
+                        document.body.appendChild(tmp);
+                        tmp.select();
+                        try { document.execCommand('copy'); marcarCopiado(); } catch (e) {}
+                        document.body.removeChild(tmp);
+                    }
+                });
+            }
+            share.hidden = false;
+        }
+
+        // Datos estructurados Article (fase 11)
+        if (document.head) {
+            try {
+                const ld = document.createElement('script');
+                ld.type = 'application/ld+json';
+                ld.textContent = JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'Article',
+                    headline: item.titulo,
+                    datePublished: item.fecha,
+                    inLanguage: 'es',
+                    author: { '@type': 'Organization', name: 'Fortune Kids' },
+                    publisher: { '@type': 'Organization', name: 'Fortune Kids' },
+                    mainEntityOfPage: window.location.href
+                });
+                document.head.appendChild(ld);
+            } catch (e) {}
+        }
     }
 
     // ----------------------------------------
