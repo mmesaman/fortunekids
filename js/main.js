@@ -8,6 +8,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all modules
+    initActiveNav();
     initMobileMenu();
     initSmoothScroll();
     initHeaderScroll();
@@ -19,7 +20,41 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initCounters();
     initDonationButtons();
+    initBackToTop();
 });
+
+// ========================================
+// ACTIVE NAV LINK
+// ========================================
+
+function initActiveNav() {
+    const links = document.querySelectorAll('.header__nav-link');
+    if (!links.length) return;
+    
+    const path = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Reset all, then mark the matching link
+    let matched = false;
+    links.forEach(link => {
+        const href = (link.getAttribute('href') || '').split('#')[0].split('/').pop();
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+        if (href === path) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+            matched = true;
+        }
+    });
+    
+    // Fallback to Inicio when no direct match
+    if (!matched) {
+        const homeLink = Array.from(links).find(l => l.getAttribute('href').indexOf('index.html') !== -1);
+        if (homeLink) {
+            homeLink.classList.add('active');
+            homeLink.setAttribute('aria-current', 'page');
+        }
+    }
+}
 
 // ========================================
 // DONATION BUTTONS
@@ -523,9 +558,15 @@ function initCounters() {
 // ========================================
 
 function initBackToTop() {
-    const backToTopBtn = document.querySelector('.back-to-top');
+    let backToTopBtn = document.querySelector('.back-to-top');
     
-    if (!backToTopBtn) return;
+    if (!backToTopBtn) {
+        backToTopBtn = document.createElement('button');
+        backToTopBtn.className = 'back-to-top';
+        backToTopBtn.setAttribute('aria-label', 'Volver arriba');
+        backToTopBtn.innerHTML = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+        document.body.appendChild(backToTopBtn);
+    }
     
     window.addEventListener('scroll', throttle(function() {
         if (window.pageYOffset > 300) {

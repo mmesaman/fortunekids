@@ -19,6 +19,11 @@ html {
     font-size: 16px;
 }
 
+/* Anchor targets clear the fixed header */
+[id] {
+    scroll-margin-top: 96px;
+}
+
 body {
     font-family: var(--font-primary);
     font-size: var(--text-base);
@@ -195,6 +200,38 @@ select {
     color: var(--color-white);
 }
 
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+    box-shadow: var(--shadow-lg);
+    z-index: calc(var(--z-sticky) - 2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity var(--transition-base), visibility var(--transition-base), transform var(--transition-base), background-color var(--transition-fast);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--color-primary-700);
+    transform: translateY(-2px);
+}
+
 /* ========================================
    BUTTON COMPONENTS
    ======================================== */
@@ -211,6 +248,17 @@ select {
     transition: all var(--transition-fast);
     cursor: pointer;
     text-decoration: none;
+}
+
+/* Micro-interaction: subtle lift on hover */
+.btn:not(:disabled):not(.btn--disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn:not(:disabled):not(.btn--disabled):active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn--primary {
@@ -369,6 +417,13 @@ select {
 .header__nav-link:hover,
 .header__nav-link.active {
     color: var(--color-primary-600);
+}
+
+/* Keyboard focus parity with hover states */
+.header__nav-link:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 4px;
+    border-radius: var(--radius-md);
 }
 
 .header__menu-toggle {
@@ -1100,6 +1155,38 @@ main {
     align-items: start;
 }
 
+/* Legal content pages */
+.legal-content__inner {
+    max-width: 720px;
+}
+
+.legal-content h2 {
+    font-family: var(--font-primary);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+}
+
+.legal-content h2:first-child {
+    margin-top: 0;
+}
+
+.legal-content p,
+.legal-content li {
+    color: var(--color-neutral-600);
+    line-height: var(--leading-relaxed);
+}
+
+.legal-content ul {
+    padding-left: var(--space-6);
+    list-style: disc;
+}
+
+.legal-content li {
+    margin-bottom: var(--space-2);
+}
+
 .contact-info > p {
     color: var(--color-neutral-600);
     font-size: var(--text-lg);
@@ -1346,8 +1433,23 @@ main {
     transition: color var(--transition-fast);
 }
 
-.footer__links a:hover {
+/* Animated underline on hover */
+.footer__links a,
+.footer__legal a {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    padding-bottom: 2px;
+    transition: color var(--transition-fast), background-size var(--transition-base);
+}
+
+.footer__links a:hover,
+.footer__links a:focus-visible,
+.footer__legal a:hover,
+.footer__legal a:focus-visible {
     color: var(--color-white);
+    background-size: 100% 1px;
 }
 
 .footer__contact li {
@@ -1368,16 +1470,15 @@ main {
     height: 40px;
     border-radius: var(--radius-full);
     background-color: var(--color-neutral-800);
-    transition: background-color var(--transition-fast);
+    color: var(--color-neutral-300);
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 
-.footer__social-link:hover {
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
     background-color: var(--color-primary-600);
-}
-
-.footer__social-link img {
-    width: 20px;
-    height: 20px;
+    color: var(--color-white);
+    transform: translateY(-2px);
 }
 
 .footer__bottom {
