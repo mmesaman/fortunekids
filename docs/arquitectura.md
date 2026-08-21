@@ -187,3 +187,11 @@ Footer oscuro (`--color-neutral-900`) organizado en una rejilla de 4 columnas en
 - **Redes sociales**: `.footer__social-link` — círculos de 40×40 px con hover primario.
 - **Enlaces legales**: privacidad, cookies, términos (`.footer__legal`).
 - **Barra inferior**: separada por borde superior; centrada en móvil, justificada en escritorio.
+
+## Fase SEO y rendimiento (FK-090..099)
+
+- Titles y meta descriptions únicos en las 14 páginas; Open Graph + Twitter Card y `theme-color` añadidos.
+- `sitemap.xml` y `robots.txt` creados con el dominio provisional `https://www.fortunekids.org`: **sustituir por el dominio real al publicar** (sitemap, `og:url`, `og:image`).
+- Pendiente al publicar: crear `assets/images/og-cover.jpg` (1200x630).
+- Fuentes: pesos exactos usados (Inter 300–700, Playfair 400–700) con `display=swap` y preconnect.
+- Imágenes: usar atributos `width`/`height`, carga diferida vía `initLazyLoading()` y formatos modernos cuando exista contenido real.
