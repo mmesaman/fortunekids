@@ -112,22 +112,97 @@ const FKCatalog = (function () {
 
             const total = items.length;
             const visibleItems = items.slice(0, state.visibles);
-            renderCards(grid, visibleItems);
+
+            if (!total) {
+                grid.innerHTML = emptyStateHTML(
+                    'No hay contenidos con estos filtros. Prueba con otra combinación.',
+                    'contenidos.html',
+                    'Ver todos los contenidos'
+                );
+            } else {
+                renderCards(grid, visibleItems);
+            }
 
             const counter = document.getElementById('listado-counter');
             if (counter) {
-                counter.textContent = visibleItems.length === 1 ? '1 contenido' : visibleItems.length + ' contenidos';
+                counter.textContent = total === 1 ? '1 contenido' : visibleItems.length + ' de ' + total + ' contenidos';
             }
 
             const moreBtn = document.getElementById('load-more');
             if (moreBtn) {
                 moreBtn.hidden = visibleItems.length >= total;
             }
-
-            document.dispatchEvent(new CustomEvent('fk:listado-updated', { detail: { total: total } }));
         }
 
         return { state: state, apply: apply };
+    }
+
+    // ----------------------------------------
+    // Controles: filtros, orden y paginación
+    // (FK-054 / FK-055 / FK-056)
+    // ----------------------------------------
+
+    function initControls() {
+        const api = window.FKListado;
+        if (!api) return;
+
+        const state = api.state;
+        const apply = api.apply;
+
+        function resetPage() {
+            state.visibles = PAGE_SIZE;
+        }
+
+        // Chips de categoría
+        const chips = Array.prototype.slice.call(document.querySelectorAll('[data-filter-categoria]'));
+        chips.forEach(function (chip) {
+            chip.addEventListener('click', function () {
+                state.categoria = chip.getAttribute('data-filter-categoria');
+                resetPage();
+                chips.forEach(function (c) {
+                    const active = c === chip;
+                    c.classList.toggle('is-active', active);
+                    c.setAttribute('aria-pressed', String(active));
+                });
+                apply();
+            });
+        });
+
+        // Estado inicial desde ?slug=
+        chips.forEach(function (c) {
+            const active = c.getAttribute('data-filter-categoria') === state.categoria;
+            c.classList.toggle('is-active', active);
+            c.setAttribute('aria-pressed', String(active));
+        });
+
+        // Tipo de contenido
+        const tipoSel = document.getElementById('filtro-tipo');
+        if (tipoSel) {
+            tipoSel.addEventListener('change', function () {
+                state.tipo = tipoSel.value;
+                resetPage();
+                apply();
+            });
+        }
+
+        // Ordenación
+        const ordenSel = document.getElementById('orden');
+        if (ordenSel) {
+            ordenSel.addEventListener('change', function () {
+                state.orden = ordenSel.value;
+                resetPage();
+                apply();
+            });
+        }
+
+        // Cargar más
+        const moreBtn = document.getElementById('load-more');
+        if (moreBtn) {
+            moreBtn.addEventListener('click', function () {
+                state.visibles += PAGE_SIZE;
+                apply();
+            });
+        }
     }
 
     // ----------------------------------------
@@ -230,8 +305,9 @@ const FKCatalog = (function () {
     function init() {
         const api = initListing();
         if (api) {
-            window.FKListado = api; // expuesto para filtros/orden/paginación
+            window.FKListado = api; // usado por initControls
             api.apply();
+            initControls();
         }
         initCategory();
         initDetail();

@@ -61,6 +61,37 @@
                 </nav>
                 <h1 class="page-hero__title">Historias y noticias</h1>
                 <p class="page-hero__subtitle">Todo lo que está pasando en Fortune Kids: historias reales, novedades y recursos útiles.</p>
+
+                <!-- Filtros y ordenación (FK-054 / FK-055) -->
+                <div class="filter-bar" role="search" aria-label="Filtrar contenidos">
+                    <div class="filter-bar__group" role="group" aria-label="Filtrar por categoría">
+                        <button type="button" class="filter-chip" data-filter-categoria="" aria-pressed="true">Todos</button>
+                        <button type="button" class="filter-chip filter-chip--primary" data-filter-categoria="educacion" aria-pressed="false">Educación</button>
+                        <button type="button" class="filter-chip filter-chip--secondary" data-filter-categoria="salud" aria-pressed="false">Salud</button>
+                        <button type="button" class="filter-chip filter-chip--tertiary" data-filter-categoria="juventud" aria-pressed="false">Juventud</button>
+                    </div>
+
+                    <div class="filter-bar__group" role="group" aria-label="Filtrar por tipo">
+                        <label for="filtro-tipo" class="visually-hidden">Filtrar por tipo de contenido</label>
+                        <select id="filtro-tipo" class="form-select form-select--compact">
+                            <option value="">Todos los tipos</option>
+                            <option value="historia">Historias</option>
+                            <option value="noticia">Noticias</option>
+                            <option value="recurso">Recursos</option>
+                            <option value="evento">Eventos</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-bar__group filter-bar__group--right">
+                        <label for="orden" class="visually-hidden">Ordenar contenidos</label>
+                        <select id="orden" class="form-select form-select--compact">
+                            <option value="recientes">Más recientes primero</option>
+                            <option value="antiguos">Más antiguos primero</option>
+                            <option value="az">Título A → Z</option>
+                            <option value="za">Título Z → A</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -69,6 +100,9 @@
             <div class="container">
                 <p id="listado-counter" class="listing__counter" role="status"></p>
                 <div id="listado-grid" class="content-grid"></div>
+                <div class="listing__actions">
+                    <button type="button" id="load-more" class="btn btn--secondary btn--lg" hidden>Cargar más</button>
+                </div>
             </div>
         </section>
     </main>
