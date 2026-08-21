@@ -197,6 +197,64 @@ select {
     color: var(--color-primary-700);
 }
 
+.btn--ghost {
+    background-color: transparent;
+    color: var(--color-primary-600);
+    border: 2px solid transparent;
+}
+
+.btn--ghost:hover {
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-700);
+}
+
+.btn--danger {
+    background-color: var(--color-error);
+    color: var(--color-white);
+    border: 2px solid var(--color-error);
+}
+
+.btn--danger:hover {
+    background-color: #dc2626;
+    border-color: #dc2626;
+    color: var(--color-white);
+}
+
+/* ========================================
+    BUTTON SIZES
+    ======================================== */
+
+.btn--sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+}
+
+.btn--lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-lg);
+}
+
+/* ========================================
+    BUTTON STATES
+    ======================================== */
+
+.btn:disabled,
+.btn--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--color-primary-300);
+    outline-offset: 2px;
+}
+
+.btn--block {
+    display: flex;
+    width: 100%;
+}
+
 /* ========================================
    HEADER
    ======================================== */
