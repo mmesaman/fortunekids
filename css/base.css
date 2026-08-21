@@ -1930,3 +1930,41 @@ a:focus-visible {
         scroll-behavior: auto !important;
     }
 }
+
+/* ========================================
+   IMPRESIÓN (fase 12)
+   ======================================== */
+
+@media print {
+    .header,
+    .footer,
+    .back-to-top,
+    .skip-link,
+    .filter-bar,
+    .listing__actions,
+    .share,
+    .breadcrumbs,
+    .header__search-panel {
+        display: none !important;
+    }
+
+    main {
+        padding-top: 0 !important;
+    }
+
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    a {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+    .detail__body p,
+    .card__text {
+        orphans: 3;
+        widows: 3;
+    }
+}

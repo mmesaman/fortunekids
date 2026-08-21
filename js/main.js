@@ -22,7 +22,22 @@ document.addEventListener('DOMContentLoaded', function() {
     initDonationButtons();
     initBackToTop();
     initSearch();
+    initServiceWorker();
 });
+
+// ========================================
+// SERVICE WORKER (fase 12)
+// ========================================
+
+function initServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+    if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') return;
+
+    // Ruta raiz del sitio derivada del manifest (presente en todas las paginas)
+    const manifest = document.querySelector('link[rel="manifest"]');
+    const raiz = manifest ? manifest.href.replace('manifest.webmanifest', '') : './';
+    navigator.serviceWorker.register(raiz + 'sw.js').catch(function () {});
+}
 
 // ========================================
 // ACTIVE NAV LINK
