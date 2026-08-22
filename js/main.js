@@ -26,6 +26,47 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ========================================
+// HEADER SEARCH (fase 6)
+// ========================================
+
+function initSearch() {
+    const toggle = document.querySelector('.header__search-toggle');
+    const panel = document.getElementById('panel-busqueda');
+    if (!toggle || !panel) return;
+
+    const input = panel.querySelector('input[type="search"]');
+
+    function setOpen(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Cerrar búsqueda' : 'Abrir búsqueda');
+        panel.hidden = !open;
+        if (open && input) {
+            input.focus();
+            input.select();
+        }
+    }
+
+    toggle.addEventListener('click', function () {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+            setOpen(false);
+            toggle.focus();
+        }
+    });
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener('click', function (e) {
+        if (toggle.getAttribute('aria-expanded') !== 'true') return;
+        if (panel.contains(e.target) || toggle.contains(e.target)) return;
+        setOpen(false);
+    });
+}
+
+// ========================================
 // SERVICE WORKER (fase 12)
 // ========================================
 
