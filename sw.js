@@ -1,5 +1,5 @@
 /* Fortune Kids - Service Worker (fase 12) */
-const VERSION = 'fk-v6';
+const VERSION = 'fk-v7';
 const PRECACHE = [
     './',
     './index.html',
@@ -20,6 +20,7 @@ const PRECACHE = [
     './assets/icons/social/facebook.png',
     './assets/icons/social/whatsapp.png',
     './assets/icons/social/tiktok.png',
+    './assets/icons/social/gofundme.png',
 ];
 
 self.addEventListener('install', function (e) {
