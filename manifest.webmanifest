@@ -1,8 +1,8 @@
 {
     "name": "Fortune Kids",
     "short_name": "Fortune Kids",
-    "description": "Organización local en Arusha, Tanzania, trabajando por el desarrollo de niños, jóvenes y comunidades.",
-    "lang": "es",
+    "description": "Local organization in Arusha, Tanzania, working for the development of children, young people and communities.",
+    "lang": "en",
     "start_url": ".",
     "scope": ".",
     "display": "standalone",

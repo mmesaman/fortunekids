@@ -38,7 +38,7 @@ function initSearch() {
 
     function setOpen(open) {
         toggle.setAttribute('aria-expanded', String(open));
-        toggle.setAttribute('aria-label', open ? 'Cerrar búsqueda' : 'Abrir búsqueda');
+        toggle.setAttribute('aria-label', open ? 'Close search' : 'Open search');
         panel.hidden = !open;
         if (open && input) {
             input.focus();
@@ -107,7 +107,7 @@ function mostrarAvisoVersion(worker) {
     aviso.setAttribute('role', 'status');
 
     const texto = document.createElement('span');
-    texto.textContent = 'Hay una nueva versión de la web';
+    texto.textContent = 'A new version of the website is available';
     aviso.appendChild(texto);
 
     const btn = document.createElement('button');
@@ -177,7 +177,7 @@ function initDonationButtons() {
             
             // Update message with selected amount
             if (paragraph !== feedback) {
-                paragraph.textContent = `Gracias por querer donar ${amount}€. La pasarela de pago se integrará próximamente; escríbenos a info@fortunekids.org y te indicamos cómo completar tu donación.`;
+                paragraph.textContent = `Thank you for wanting to donate €${amount}. The payment gateway will be integrated soon; write to info@fortunekids.org and we will tell you how to complete your donation.`;
             }
         });
     });
@@ -198,7 +198,7 @@ function initMobileMenu() {
         nav.classList.remove('active');
         document.body.classList.remove('menu-open');
         menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Abrir menú');
+        menuToggle.setAttribute('aria-label', 'Open menu');
     }
     
     menuToggle.addEventListener('click', function() {
@@ -206,7 +206,7 @@ function initMobileMenu() {
         this.classList.toggle('active', isOpen);
         document.body.classList.toggle('menu-open', isOpen);
         this.setAttribute('aria-expanded', String(isOpen));
-        this.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+        this.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     });
     
     // Close menu when clicking on a link
@@ -461,7 +461,7 @@ function initFormValidation() {
                 if (!errorEl) {
                     errorEl = document.createElement('span');
                     errorEl.className = 'form-error';
-                    errorEl.id = (field.id || field.name || 'campo') + '-error';
+                    errorEl.id = (field.id || field.name || 'field') + '-error';
                     field.parentNode.appendChild(errorEl);
                 }
                 errorEl.textContent = message;
@@ -486,7 +486,7 @@ function initFormValidation() {
             // Required fields
             form.querySelectorAll('[required]').forEach(field => {
                 if (!field.value.trim()) {
-                    setError(field, 'Este campo es obligatorio');
+                    setError(field, 'This field is required');
                 } else {
                     clearError(field);
                 }
@@ -496,7 +496,7 @@ function initFormValidation() {
             form.querySelectorAll('input[type="email"]').forEach(field => {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (field.value && !emailRegex.test(field.value)) {
-                    setError(field, 'Por favor, introduce un email válido');
+                    setError(field, 'Please enter a valid email address');
                 }
             });
 

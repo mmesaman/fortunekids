@@ -2,7 +2,7 @@
 
 Web estática de Fortune Kids, organización local de Arusha (Tanzania) que trabaja por el desarrollo de niños, jóvenes y comunidades.
 
-**Publicación:** https://mmesaman.github.io/fortunekids/
+**Publicación:** https://www.fortunekids.org/
 
 ## Stack
 

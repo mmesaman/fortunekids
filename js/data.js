@@ -1,25 +1,25 @@
 /* ========================================
-   FORTUNE KIDS - CATÁLOGO DE CONTENIDOS
-   Modelo de datos (demo) para plantillas de
-   categoría, listado y detalle.
+   FORTUNE KIDS - CONTENT CATALOG
+   Demo data model for the category,
+   listing and detail templates.
    ======================================== */
 
 const FK_CATEGORIAS = {
     educacion: {
-        nombre: 'Educación y protección infantil',
-        descripcion: 'Becas, refuerzo escolar y protección para que ningún niño se quede fuera del aula.',
+        nombre: 'Education &amp; child protection',
+        descripcion: 'Scholarships, learning support and protection so that no child is left out of the classroom.',
         icono: 'education',
         color: 'primary'
     },
     salud: {
-        nombre: 'Salud y bienestar',
-        descripcion: 'Revisiones médicas, nutrición e higiene para niños y familias de Arusha.',
+        nombre: 'Health &amp; well-being',
+        descripcion: 'Medical check-ups, nutrition and hygiene for children and families in Arusha.',
         icono: 'health',
         color: 'secondary'
     },
     juventud: {
-        nombre: 'Juventud y formación',
-        descripcion: 'Formación profesional, empleo y emprendimiento para la próxima generación.',
+        nombre: 'Youth &amp; training',
+        descripcion: 'Vocational training, employment and entrepreneurship for the next generation.',
         icono: 'youth',
         color: 'tertiary'
     }
@@ -28,169 +28,169 @@ const FK_CATEGORIAS = {
 const FK_CONTENIDOS = [
     {
         id: 'amina-vuelve-a-clase',
-        titulo: 'Amina vuelve a clase tras un año sin escolarizar',
+        titulo: 'Amina returns to school after a year out of the classroom',
         categoria: 'educacion',
         tipo: 'historia',
         fecha: '2026-06-14',
-        resumen: 'Gracias al programa de becas, Amina ha retomado sus estudios y sueña con ser profesora.',
+        resumen: 'Thanks to the scholarship program, Amina has resumed her studies and dreams of becoming a teacher.',
         contenido: [
-            'Cuando su familia perdió los ingresos, Amina dejó la escuela con 9 años. El equipo de Fortune Kids detectó el caso durante una visita comunitaria y le ofreció una beca que cubre matrícula, uniforme y material escolar.',
-            'Hoy Amina está de vuelta en 4º curso. "Cuando sea mayor quiero ser profesora para que ninguna niña de mi barrio se quede fuera del colegio", nos cuenta mientras enseña sus cuadernos.',
-            'Su historia es una más de las once familias que actualmente reciben apoyo educativo directo del programa.'
+            'When her family lost its income, Amina left school at the age of 9. The Fortune Kids team found her case during a community visit and offered her a scholarship covering tuition, uniform and school supplies.',
+            'Today Amina is back in 4th grade. \u201CWhen I grow up I want to be a teacher so that no girl in my neighborhood is left out of school,\u201D she tells us while showing us her notebooks.',
+            'Her story is one of eleven families currently receiving direct educational support from the program.'
         ],
         destacada: true
     },
     {
         id: 'revisiones-medicas-2026',
-        titulo: 'La campaña de revisiones médicas alcanza a 40 familias',
+        titulo: 'The medical check-up campaign reaches 40 families',
         categoria: 'salud',
         tipo: 'noticia',
         fecha: '2026-05-28',
-        resumen: 'El equipo local completó una nueva ronda de controles pediátricos con seguimiento hasta el alta.',
+        resumen: 'The local team completed a new round of pediatric check-ups with follow-up until discharge.',
         contenido: [
-            'En colaboración con personal sanitario local, hemos completado una nueva campaña de revisiones médicas infantiles: control de peso, vacunas, visión y estado nutricional.',
-            'Cinco niños fueron derivados a tratamiento y han recibido seguimiento continuo hasta su alta médica. Las familias participaron además en talleres prácticos de alimentación equilibrada con productos locales.',
-            'La próxima campaña está prevista para el próximo trimestre y ampliará la cobertura a tres barrios nuevos.'
+            'Working with local health professionals, we have completed a new campaign of children\u2019s medical check-ups: weight monitoring, vaccinations, eyesight and nutritional status.',
+            'Five children were referred for treatment and received continuous follow-up until medical discharge. Families also took part in hands-on workshops on balanced meals using local products.',
+            'The next campaign is planned for next quarter and will expand coverage to three new neighborhoods.'
         ],
         destacada: true
     },
     {
         id: 'taller-costura-joseph-baraka',
-        titulo: 'Primeros jóvenes del programa inician su propio negocio',
+        titulo: 'First program graduates launch their own business',
         categoria: 'juventud',
         tipo: 'historia',
         fecha: '2026-05-10',
-        resumen: 'Joseph y Baraka abren un taller de costura en Arusha tras completar la formación profesional.',
+        resumen: 'Joseph and Baraka open a sewing workshop in Arusha after completing vocational training.',
         contenido: [
-            'Después de completar el itinerario de formación profesional, Joseph y Baraka han montado un taller de costura en el centro de Arusha.',
-            'Con un microapoyo inicial y mentoría continua, el taller ya emplea a dos personas más de la comunidad y se ha convertido en lugar de prácticas para los nuevos alumnos del programa.',
-            '"El programa me dio las herramientas; ahora empleo a dos personas más", explica Joseph.'
+            'After completing the vocational training pathway, Joseph and Baraka have opened a sewing workshop in central Arusha.',
+            'With an initial micro-grant and ongoing mentoring, the workshop already employs two more people from the community and has become a training placement for the program\u2019s new students.',
+            '\u201CThe program gave me the tools; now I employ two more people,\u201D explains Joseph.'
         ],
         destacada: true
     },
     {
         id: 'guia-becas-2026',
-        titulo: 'Guía práctica: cómo solicitar una beca escolar',
+        titulo: 'Practical guide: how to apply for a school scholarship',
         categoria: 'educacion',
         tipo: 'recurso',
         fecha: '2026-04-22',
-        resumen: 'Paso a paso para familias: requisitos, documentación y plazos del programa de becas.',
+        resumen: 'Step by step for families: requirements, paperwork and deadlines of the scholarship program.',
         contenido: [
-            'El programa de becas cubre matrícula, uniforme, material escolar y transporte para niños en situación de vulnerabilidad.',
-            'Para solicitarla, las familias pueden acercarse a nuestra sede en Arusha o hablar directamente con el equipo comunitario durante las visitas mensuales.',
-            'Documentación necesaria: documento de identidad del menor, justificante de ingresos familiares y certificado escolar del último año cursado.'
+            'The scholarship program covers tuition, uniform, school supplies and transport for children in vulnerable situations.',
+            'To apply, families can visit our office in Arusha or talk directly with the community team during monthly visits.',
+            'Required documents: the child\u2019s ID document, proof of household income and the school certificate from the last year completed.'
         ]
     },
     {
         id: 'talleres-nutricion-familias',
-        titulo: 'Talleres de nutrición para familias: primera sesión completa',
+        titulo: 'Nutrition workshops for families: first session fully booked',
         categoria: 'salud',
         tipo: 'noticia',
         fecha: '2026-04-03',
-        resumen: 'Veinte madres y padres aprendieron a planificar menús equilibrados con productos de mercado local.',
+        resumen: 'Twenty mothers and fathers learned how to plan balanced menus with products from the local market.',
         contenido: [
-            'La primera sesión del taller de nutrición reunió a veinte familias en la sede de Fortune Kids.',
-            'Durante dos horas, el equipo sanitario explicó cómo combinar ingredientes de mercado para lograr menús completos con presupuesto ajustado, con demostraciones en vivo.',
-            'Las próximas sesiones tratarán higiene infantil y prevención de enfermedades estacionales.'
+            'The first session of the nutrition workshop brought twenty families together at the Fortune Kids office.',
+            'Over two hours, the health team explained how to combine market ingredients to build complete menus on a tight budget, with live demonstrations.',
+            'Upcoming sessions will cover child hygiene and prevention of seasonal illnesses.'
         ]
     },
     {
         id: 'orientacion-laboral-jovenes',
-        titulo: 'Nuevo itinerario de orientación laboral para jóvenes',
+        titulo: 'New career guidance pathway for young people',
         categoria: 'juventud',
         tipo: 'noticia',
         fecha: '2026-03-18',
-        resumen: 'Arranca un programa de acompañamiento individualizado hacia el primer empleo formal.',
+        resumen: 'A new individualized support program towards a first formal job is underway.',
         contenido: [
-            'El nuevo itinerario combina sesiones grupales de preparación (CV, entrevistas, derechos laborales) con acompañamiento individual.',
-            'Cada joven contará con un mentor que le guiará durante seis meses hasta la inserción laboral o la puesta en marcha de su propio proyecto.',
-            'Las plazas son limitadas; las inscripciones se realizan a través de la oficina de juventud de Fortune Kids en Arusha.'
+            'The new pathway combines group preparation sessions (CV writing, interviews, labor rights) with one-to-one support.',
+            'Each young person will have a mentor guiding them for six months until job placement or the launch of their own project.',
+            'Places are limited; registration takes place through the Fortune Kids youth office in Arusha.'
         ]
     },
     {
         id: 'dia-internacional-nina',
-        titulo: 'Celebramos el Día Internacional de la Niña con actividades abiertas',
+        titulo: 'We celebrate International Day of the Girl with open activities',
         categoria: 'educacion',
         tipo: 'evento',
         fecha: '2026-03-08',
-        resumen: 'Juegos, cuentacuentos y una charla sobre referentes femeninos reunieron a toda la comunidad.',
+        resumen: 'Games, storytelling and a talk on female role models brought the whole community together.',
         contenido: [
-            'Con motivo del Día Internacional de la Niña organizamos una jornada abierta con juegos cooperativos, cuentacuentos y una charla sobre mujeres referentes de Tanzania.',
-            'Más de sesenta niños y niñas participaron en las actividades, facilitadas por nuestro equipo y voluntariado local.',
-            'Gracias a todas las familias que se acercaron a celebrarlo con nosotros.'
+            'To mark International Day of the Girl we organized an open day with cooperative games, storytelling and a talk about women role models from Tanzania.',
+            'More than sixty boys and girls took part in the activities, led by our team and local volunteers.',
+            'Thank you to all the families who came to celebrate with us.'
         ]
     },
     {
         id: 'checkup-salud-bucal',
-        titulo: 'Check-up de salud bucal para todos los niños del programa',
+        titulo: 'Oral health check-up for every child in the program',
         categoria: 'salud',
         tipo: 'noticia',
         fecha: '2026-02-20',
-        resumen: 'Revisión dental completa y kit de higiene para cada niño, con educación en cepillado.',
+        resumen: 'Full dental check-up and hygiene kit for each child, along with brushing education.',
         contenido: [
-            'Todos los niños del programa recibieron una revisión dental completa junto a un kit de higiene bucal.',
-            'Los talleres de cepillado enseñaron técnica correcta y rutinas diarias adaptadas a cada edad.',
-            'Los casos que necesitaban seguimiento fueron derivados a la clínica colaboradora con costes cubiertos por el programa.'
+            'Every child in the program received a full dental check-up together with an oral hygiene kit.',
+            'Brushing workshops taught proper technique and daily routines adapted to each age group.',
+            'Cases requiring follow-up were referred to the partner clinic with costs covered by the program.'
         ]
     },
     {
         id: 'microcreditos-emprendimiento',
-        titulo: 'Microcréditos de emprendimiento: así funcionan',
+        titulo: 'Entrepreneurship micro-loans: how they work',
         categoria: 'juventud',
         tipo: 'recurso',
         fecha: '2026-02-01',
-        resumen: 'Explicamos los requisitos del fondo de microapoyo para proyectos jóvenes en Arusha.',
+        resumen: 'We explain the requirements of the micro-support fund for youth projects in Arusha.',
         contenido: [
-            'El fondo de microcréditos ofrece apoyo económico inicial sin intereses a proyectos liderados por antiguos alumnos del programa de formación.',
-            'Los requisitos: presentar un plan sencillo de negocio, contar con un mentor asignado y participar en las sesiones trimestrales de seguimiento.',
-            'La devolución se adapta a los ingresos del proyecto, y los fondos recuperados se reinvierten en nuevos emprendimientos.'
+            'The micro-loan fund offers interest-free start-up support to projects led by former students of the training program.',
+            'Requirements: submit a simple business plan, have an assigned mentor and take part in the quarterly follow-up sessions.',
+            'Repayment adapts to the project\u2019s income, and recovered funds are reinvested into new ventures.'
         ]
     },
     {
         id: 'clases-refuerzo-resultados',
-        titulo: 'Las clases de refuerzo elevan el rendimiento escolar un curso',
+        titulo: 'Tutoring classes boost school performance by a full grade',
         categoria: 'educacion',
         tipo: 'noticia',
         fecha: '2026-01-15',
-        resumen: 'La evaluación del primer trimestre muestra mejoras significativas en lectura y cálculo.',
+        resumen: 'First-term assessment shows significant improvements in reading and arithmetic.',
         contenido: [
-            'La evaluación del primer trimestre confirma que los asistentes habituales al refuerzo escolar han avanzado una media de un nivel completo en lectura y cálculo.',
-            'El equipo atribuye el resultado a los grupos reducidos y al seguimiento individualizado de cada niño.',
-            'El objetivo del próximo trimestre es incorporar a ocho nuevos alumnos a las clases de refuerzo.'
+            'The first-term assessment confirms that regular attendees of the tutoring classes have advanced by an average of one full level in reading and arithmetic.',
+            'The team attributes the result to small groups and individualized attention for each child.',
+            'The goal for next term is to bring eight new students into the tutoring classes.'
         ]
     },
     {
         id: 'jornada-puertas-abiertas',
-        titulo: 'Jornada de puertas abiertas: conoce nuestra sede en Arusha',
+        titulo: 'Open day: visit our office in Arusha',
         categoria: 'juventud',
         tipo: 'evento',
         fecha: '2025-12-12',
-        resumen: 'Visita nuestras aulas y talleres, conoce al equipo y descubre cómo trabajamos día a día.',
+        resumen: 'Tour our classrooms and workshops, meet the team and discover how we work day by day.',
         contenido: [
-            'Abrimos las puertas de la sede para que vecinos, familias y colaboradores puedan conocer de primera mano nuestros programas.',
-            'Habrá visitas guiadas por las aulas y talleres, presentación del equipo y espacio de preguntas.',
-            'Si quieres visitarnos fuera de estas fechas, escríbenos a info@fortunekids.org y agendamos tu visita.'
+            'We are opening the doors of our office so that neighbors, families and partners can experience our programs first hand.',
+            'There will be guided tours of the classrooms and workshops, an introduction to the team and time for questions.',
+            'If you would like to visit us outside these dates, write to info@fortunekids.org and we will schedule your visit.'
         ]
     },
     {
         id: 'protocolo-proteccion-infantil',
-        titulo: 'Nuestro protocolo de protección infantil, explicado',
+        titulo: 'Our child protection protocol, explained',
         categoria: 'salud',
         tipo: 'recurso',
         fecha: '2025-11-30',
-        resumen: 'Cómo garantizamos entornos seguros: formación del equipo, protocolo de actuación y comunicación responsable.',
+        resumen: 'How we guarantee safe environments: staff training, action protocol and responsible communication.',
         contenido: [
-            'La seguridad de la infancia es prioridad absoluta. Todo el equipo y voluntariado recibe formación periódica en protección infantil.',
-            'Nuestro protocolo define cómo detectar, comunicar y actuar ante cualquier situación de riesgo, con canales confidenciales de reporte.',
-            'Además, aplicamos criterios estrictos de comunicación: nunca publicamos imágenes o datos identificativos de menores sin consentimiento informado.'
+            'Child safety is our absolute priority. All staff and volunteers receive regular training in child protection.',
+            'Our protocol defines how to detect, report and act on any risk situation, with confidential reporting channels.',
+            'In addition, we apply strict communication criteria: we never publish identifying images or data of minors without informed consent.'
         ]
     }
 ];
 
-/* Metadatos de tipos de contenido */
+/* Content type metadata */
 const FK_TIPOS = {
-    historia: { etiqueta: 'Historia', badge: 'badge--primary' },
-    noticia: { etiqueta: 'Noticia', badge: 'badge--info' },
-    recurso: { etiqueta: 'Recurso', badge: 'badge--neutral' },
-    evento: { etiqueta: 'Evento', badge: 'badge--secondary' }
+    historia: { etiqueta: 'Story', badge: 'badge--primary' },
+    noticia: { etiqueta: 'News', badge: 'badge--info' },
+    recurso: { etiqueta: 'Resource', badge: 'badge--neutral' },
+    evento: { etiqueta: 'Event', badge: 'badge--secondary' }
 };

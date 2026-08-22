@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
-    <meta name="description" content="Resultados de búsqueda en la web de Fortune Kids">
+    <meta name="description" content="Search results on the Fortune Kids website">
     <meta name="theme-color" content="#0284c7">
 
-    <meta property="og:title" content="Búsqueda | Fortune Kids">
-    <meta property="og:description" content="Resultados de búsqueda en la web de Fortune Kids">
+    <meta property="og:title" content="Search | Fortune Kids">
+    <meta property="og:description" content="Search results on the Fortune Kids website">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.fortunekids.org/pages/busqueda.html">
     <meta property="og:image" content="https://www.fortunekids.org/assets/images/og-cover.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Búsqueda | Fortune Kids">
-    <meta name="twitter:description" content="Resultados de búsqueda en la web de Fortune Kids">
+    <meta name="twitter:title" content="Search | Fortune Kids">
+    <meta name="twitter:description" content="Search results on the Fortune Kids website">
     <meta name="twitter:image" content="https://www.fortunekids.org/assets/images/og-cover.jpg">
-    <title>Búsqueda | Fortune Kids</title>
+    <title>Search | Fortune Kids</title>
     
+    <link rel="alternate" hreflang="en" href="https://www.fortunekids.org/pages/busqueda.html">
+    <link rel="alternate" hreflang="es" href="https://www.fortunekids.org/es/pages/busqueda.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.fortunekids.org/pages/busqueda.html">
     <link rel="manifest" href="../manifest.webmanifest">
     <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
     <link rel="stylesheet" href="../css/variables.css">
@@ -30,46 +33,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+    <a href="#contenido-principal" class="skip-link">Skip to main content</a>
 
     <header class="header">
         <div class="container header__container">
             <div class="header__logo">
-                <a href="../index.html" aria-label="Fortune Kids - Inicio">
+                <a href="../index.html" aria-label="Fortune Kids - Home">
                     <img src="../assets/images/logo.svg" alt="" width="120" height="40" class="header__logo-img">
                 </a>
             </div>
             
-            <nav id="menu-principal" class="header__nav" aria-label="Navegación principal">
+            <nav id="menu-principal" class="header__nav" aria-label="Main navigation">
                 <ul class="header__nav-list">
-                    <li><a href="../index.html" class="header__nav-link">Inicio</a></li>
-                    <li><a href="quienes-somos.html" class="header__nav-link">Quiénes somos</a></li>
-                    <li><a href="que-hacemos.html" class="header__nav-link">Qué hacemos</a></li>
-                    <li><a href="impacto.html" class="header__nav-link active" aria-current="page">Nuestro impacto</a></li>
-                    <li><a href="como-ayudar.html" class="header__nav-link">Cómo ayudar</a></li>
-                    <li><a href="transparencia.html" class="header__nav-link">Transparencia</a></li>
-                    <li><a href="contacto.html" class="header__nav-link">Contacto</a></li>
+                    <li><a href="../index.html" class="header__nav-link">Home</a></li>
+                    <li><a href="quienes-somos.html" class="header__nav-link">About us</a></li>
+                    <li><a href="que-hacemos.html" class="header__nav-link">What we do</a></li>
+                    <li><a href="impacto.html" class="header__nav-link active" aria-current="page">Our impact</a></li>
+                    <li><a href="como-ayudar.html" class="header__nav-link">How to help</a></li>
+                    <li><a href="transparencia.html" class="header__nav-link">Transparency</a></li>
+                    <li><a href="contacto.html" class="header__nav-link">Contact</a></li>
                 </ul>
             </nav>
             
-            <button class="header__menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+            <button class="header__menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu-principal">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <button type="button" class="header__search-toggle" aria-label="Abrir búsqueda" aria-expanded="false" aria-controls="panel-busqueda">
+            <button type="button" class="header__search-toggle" aria-label="Open search" aria-expanded="false" aria-controls="panel-busqueda">
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
             </button>
 
-            <a href="como-ayudar.html#donar" class="btn btn--primary btn--sm header__cta">Donar</a>
+            <a href="../es/pages/busqueda.html" class="header__lang" lang="es" hreflang="es" aria-label="Cambiar a español" title="Español"><svg viewBox="0 0 20 14" width="21" height="15" aria-hidden="true" focusable="false"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg></a>
+
+            <a href="como-ayudar.html#donar" class="btn btn--primary btn--sm header__cta">Donate</a>
         </div>
 
         <div id="panel-busqueda" class="header__search-panel" hidden>
             <form class="header__search-form container" action="busqueda.html" method="get" role="search">
-                <label for="q-header" class="visually-hidden">Buscar en el sitio</label>
-                <input type="search" id="q-header" name="q" class="header__search-input" placeholder="Buscar historias, noticias…" autocomplete="off">
-                <button type="submit" class="btn btn--primary btn--sm">Buscar</button>
+                <label for="q-header" class="visually-hidden">Search the site</label>
+                <input type="search" id="q-header" name="q" class="header__search-input" placeholder="Search stories, news…" autocomplete="off">
+                <button type="submit" class="btn btn--primary btn--sm">Search</button>
             </form>
         </div>
     </header>
@@ -78,28 +83,28 @@
         <!-- Page Hero -->
         <section class="page-hero">
             <div class="container">
-                <nav class="breadcrumbs" aria-label="Migas de pan">
+                <nav class="breadcrumbs" aria-label="Breadcrumbs">
                     <ol class="breadcrumbs__list">
-                        <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Inicio</a></li>
-                        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Búsqueda</span></li>
+                        <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Home</a></li>
+                        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Search</span></li>
                     </ol>
                 </nav>
-                <h1 id="busqueda-title" class="page-hero__title">Búsqueda</h1>
+                <h1 id="busqueda-title" class="page-hero__title">Search</h1>
 
-                <!-- Formulario grande de la página de resultados (FK-062) -->
-                <form class="search-page-form" action="busqueda.html" method="get" role="search" aria-label="Buscar contenidos">
-                    <label for="busqueda-input" class="visually-hidden">Buscar en el sitio</label>
-                    <input type="search" id="busqueda-input" name="q" class="header__search-input search-page-form__input" placeholder="Buscar historias, noticias, recursos…" autocomplete="off">
-                    <button type="submit" class="btn btn--primary">Buscar</button>
+                <!-- Large results page form (FK-062) -->
+                <form class="search-page-form" action="busqueda.html" method="get" role="search" aria-label="Search content">
+                    <label for="busqueda-input" class="visually-hidden">Search the site</label>
+                    <input type="search" id="busqueda-input" name="q" class="header__search-input search-page-form__input" placeholder="Search stories, news, resources…" autocomplete="off">
+                    <button type="submit" class="btn btn--primary">Search</button>
                 </form>
             </div>
         </section>
 
         <!-- Results -->
-        <section class="section listing" aria-label="Resultados de búsqueda">
+        <section class="section listing" aria-label="Search results">
             <div class="container">
                 <noscript>
-                    <p class="alert alert--warning">Para ver el contenido de esta página necesitas un navegador con JavaScript activado.</p>
+                    <p class="alert alert--warning">You need a browser with JavaScript enabled to view this page.</p>
                 </noscript>
                 <p id="busqueda-counter" class="listing__counter" role="status"></p>
                 <div id="busqueda-grid" class="content-grid"></div>
@@ -112,22 +117,22 @@
             <div class="footer__grid">
                 <div class="footer__col">
                     <h3 class="footer__title">Fortune Kids</h3>
-                    <p class="footer__text">Organización local en Arusha, Tanzania, trabajando por el desarrollo de niños, jóvenes y comunidades.</p>
+                    <p class="footer__text">Local organization in Arusha, Tanzania, working for the development of children, young people and communities.</p>
                 </div>
                 
                 <div class="footer__col">
-                    <h4 class="footer__subtitle">Enlaces</h4>
+                    <h4 class="footer__subtitle">Links</h4>
                     <ul class="footer__links">
-                        <li><a href="quienes-somos.html">Quiénes somos</a></li>
-                        <li><a href="que-hacemos.html">Qué hacemos</a></li>
-                        <li><a href="impacto.html">Nuestro impacto</a></li>
-                        <li><a href="contenidos.html">Historias y noticias</a></li>
-                        <li><a href="transparencia.html">Transparencia</a></li>
+                        <li><a href="quienes-somos.html">About us</a></li>
+                        <li><a href="que-hacemos.html">What we do</a></li>
+                        <li><a href="impacto.html">Our impact</a></li>
+                        <li><a href="contenidos.html">Stories &amp; news</a></li>
+                        <li><a href="transparencia.html">Transparency</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer__col">
-                    <h4 class="footer__subtitle">Contacto</h4>
+                    <h4 class="footer__subtitle">Contact</h4>
                     <ul class="footer__contact">
                         <li>Arusha, Tanzania</li>
                         <li><a href="mailto:info@fortunekids.org">info@fortunekids.org</a></li>
@@ -135,12 +140,12 @@
                 </div>
                 
                 <div class="footer__col">
-                    <h4 class="footer__subtitle">Síguenos</h4>
+                    <h4 class="footer__subtitle">Follow us</h4>
                     <div class="footer__social">
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram de Fortune Kids">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Fortune Kids on Instagram">
                             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
                         </a>
-                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Facebook de Fortune Kids">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Fortune Kids on Facebook">
                             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         </a>
                     </div>
@@ -148,11 +153,11 @@
             </div>
             
             <div class="footer__bottom">
-                <p>&copy; 2026 Fortune Kids. Todos los derechos reservados.</p>
-                <nav class="footer__legal" aria-label="Enlaces legales">
-                    <a href="politica-privacidad.html">Política de privacidad</a>
-                    <a href="politica-cookies.html">Política de cookies</a>
-                    <a href="safeguarding.html">Protección infantil</a>
+                <p>&copy; 2026 Fortune Kids. All rights reserved.</p>
+                <nav class="footer__legal" aria-label="Legal links">
+                    <a href="politica-privacidad.html">Privacy Policy</a>
+                    <a href="politica-cookies.html">Cookie Policy</a>
+                    <a href="safeguarding.html">Child Safeguarding</a>
                 </nav>
             </div>
         </div>

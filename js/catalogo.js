@@ -1,7 +1,7 @@
 /* ========================================
-   FORTUNE KIDS - MOTOR DE CATÁLOGO
+   FORTUNE KIDS - CATALOG ENGINE
    Render de tarjetas y vistas: listado,
-   categoría (?slug=) y detalle (?id=).
+   category (?slug=) and detail (?id=).
    ======================================== */
 
 const FKCatalog = (function () {
@@ -21,7 +21,7 @@ const FKCatalog = (function () {
 
     function formatDate(iso) {
         const d = new Date(iso + 'T00:00:00');
-        return d.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+        return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
     function getUrlParam(name) {
@@ -85,7 +85,7 @@ const FKCatalog = (function () {
                     '<p class="card__text">' + escapeHtml(item.resumen) + '</p>' +
                     '<div class="content-card__footer">' +
                         '<time datetime="' + item.fecha + '">' + formatDate(item.fecha) + '</time>' +
-                        '<a class="card__link" href="contenido.html?id=' + encodeURIComponent(item.id) + '">Leer más →</a>' +
+                        '<a class="card__link" href="contenido.html?id=' + encodeURIComponent(item.id) + '">Read more →</a>' +
                     '</div>' +
                 '</div>' +
             '</article>'
@@ -100,7 +100,7 @@ const FKCatalog = (function () {
         return (
             '<div class="empty-state">' +
                 '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>' +
-                '<h3>No hay resultados</h3>' +
+                '<h3>No results found</h3>' +
                 '<p>' + escapeHtml(mensaje) + '</p>' +
                 '<a href="' + volverHref + '" class="btn btn--secondary">' + escapeHtml(volverTexto) + '</a>' +
             '</div>'
@@ -131,9 +131,9 @@ const FKCatalog = (function () {
             if (state.orden === 'antiguos') {
                 items = items.slice().reverse();
             } else if (state.orden === 'az') {
-                items = items.slice().sort(function (a, b) { return a.titulo.localeCompare(b.titulo, 'es'); });
+                items = items.slice().sort(function (a, b) { return a.titulo.localeCompare(b.titulo, 'en'); });
             } else if (state.orden === 'za') {
-                items = items.slice().sort(function (a, b) { return b.titulo.localeCompare(a.titulo, 'es'); });
+                items = items.slice().sort(function (a, b) { return b.titulo.localeCompare(a.titulo, 'en'); });
             }
 
             const total = items.length;
@@ -141,9 +141,9 @@ const FKCatalog = (function () {
 
             if (!total) {
                 grid.innerHTML = emptyStateHTML(
-                    'No hay contenidos con estos filtros. Prueba con otra combinación.',
+                    'No content matches these filters. Try a different combination.',
                     'contenidos.html',
-                    'Ver todos los contenidos'
+                    'View all content'
                 );
             } else {
                 renderCards(grid, visibleItems);
@@ -151,7 +151,7 @@ const FKCatalog = (function () {
 
             const counter = document.getElementById('listado-counter');
             if (counter) {
-                counter.textContent = total === 1 ? '1 contenido' : visibleItems.length + ' de ' + total + ' contenidos';
+                counter.textContent = total === 1 ? '1 item' : visibleItems.length + ' of ' + total + ' items';
             }
 
             const moreBtn = document.getElementById('load-more');
@@ -164,7 +164,7 @@ const FKCatalog = (function () {
     }
 
     // ----------------------------------------
-    // Controles: filtros, orden y paginación
+    // Controls: filters, sorting and pagination
     // (FK-054 / FK-055 / FK-056)
     // ----------------------------------------
 
@@ -179,7 +179,7 @@ const FKCatalog = (function () {
             state.visibles = PAGE_SIZE;
         }
 
-        // Chips de categoría
+        // Category chips
         const chips = Array.prototype.slice.call(document.querySelectorAll('[data-filter-categoria]'));
         chips.forEach(function (chip) {
             chip.addEventListener('click', function () {
@@ -211,7 +211,7 @@ const FKCatalog = (function () {
             });
         }
 
-        // Ordenación
+        // Sorting
         const ordenSel = document.getElementById('orden');
         if (ordenSel) {
             ordenSel.addEventListener('change', function () {
@@ -221,7 +221,7 @@ const FKCatalog = (function () {
             });
         }
 
-        // Cargar más
+        // Load more
         const moreBtn = document.getElementById('load-more');
         if (moreBtn) {
             moreBtn.addEventListener('click', function () {
@@ -232,7 +232,7 @@ const FKCatalog = (function () {
     }
 
     // ----------------------------------------
-    // Vista: categoría (FK-050)
+    // View: category (FK-050)
     // ----------------------------------------
 
     function initCategory() {
@@ -246,12 +246,12 @@ const FKCatalog = (function () {
         const desc = document.getElementById('categoria-desc');
 
         if (!cat) {
-            title.textContent = 'Categoría no encontrada';
-            desc.textContent = 'La categoría que buscas no existe o ha cambiado de nombre.';
+            title.textContent = 'Category not found';
+            desc.textContent = 'The category you are looking for does not exist or has been renamed.';
             grid.innerHTML = emptyStateHTML(
-                'Explora todos nuestros contenidos desde el listado completo.',
+                'Browse all our content from the full listing.',
                 'contenidos.html',
-                'Ver todos los contenidos'
+                'View all content'
             );
             return;
         }
@@ -261,7 +261,7 @@ const FKCatalog = (function () {
         desc.textContent = cat.descripcion;
 
         ldBreadcrumb([
-            { nombre: 'Inicio', url: '../index.html' },
+            { nombre: 'Home', url: '../index.html' },
             { nombre: cat.nombre, url: 'categoria.html?slug=' + slug }
         ]);
 
@@ -271,7 +271,7 @@ const FKCatalog = (function () {
 
         const items = getItems(slug);
         if (!items.length) {
-            grid.innerHTML = emptyStateHTML('Aún no hay contenidos publicados en esta categoría.', 'contenidos.html', 'Ver otros contenidos');
+            grid.innerHTML = emptyStateHTML('No content has been published in this category yet.', 'contenidos.html', 'View other content');
             return;
         }
         renderCards(grid, items);
@@ -290,11 +290,11 @@ const FKCatalog = (function () {
         const catCrumb = document.getElementById('breadcrumb-categoria');
 
         if (!item) {
-            titleEl.textContent = 'Contenido no encontrado';
+            titleEl.textContent = 'Content not found';
             document.getElementById('detalle-meta').innerHTML = '';
             document.getElementById('detalle-cuerpo').innerHTML =
-                '<p>El contenido que buscas no existe o ha sido movido.</p>' +
-                '<a href="contenidos.html" class="btn btn--primary">Ver todos los contenidos</a>';
+                '<p>The content you are looking for does not exist or has been moved.</p>' +
+                '<a href="contenidos.html" class="btn btn--primary">View all content</a>';
             return;
         }
 
@@ -308,12 +308,12 @@ const FKCatalog = (function () {
         document.getElementById('detalle-meta').innerHTML =
             '<span class="badge ' + (tipo.badge || '') + '">' + escapeHtml(tipo.etiqueta) + '</span> ' +
             '<span class="badge badge--neutral"><a href="categoria.html?slug=' + encodeURIComponent(item.categoria) + '">' + escapeHtml(cat.nombre) + '</a></span>' +
-            '<p class="detail__date">Publicado el <time datetime="' + item.fecha + '">' + formatDate(item.fecha) + '</time></p>';
+            '<p class="detail__date">Published on <time datetime="' + item.fecha + '">' + formatDate(item.fecha) + '</time></p>';
 
         document.getElementById('detalle-cuerpo').innerHTML =
             item.contenido.map(function (p) { return '<p>' + escapeHtml(p) + '</p>'; }).join('');
 
-        // Relacionados: misma categoría, excluyendo el actual
+        // Related: same category, excluding current item
         const relGrid = document.getElementById('relacionados-grid');
         const related = FK_CONTENIDOS
             .filter(function (it) { return it.categoria === item.categoria && it.id !== item.id; })
@@ -345,10 +345,10 @@ const FKCatalog = (function () {
                 copyBtn.addEventListener('click', function () {
                     function marcarCopiado() {
                         copyBtn.classList.add('is-copied');
-                        copyBtn.setAttribute('aria-label', 'Enlace copiado');
+                        copyBtn.setAttribute('aria-label', 'Link copied');
                         setTimeout(function () {
                             copyBtn.classList.remove('is-copied');
-                            copyBtn.setAttribute('aria-label', 'Copiar enlace');
+                            copyBtn.setAttribute('aria-label', 'Copy link');
                         }, 2000);
                     }
                     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -372,22 +372,22 @@ const FKCatalog = (function () {
             '@type': 'Article',
             headline: item.titulo,
             datePublished: item.fecha,
-            inLanguage: 'es',
+            inLanguage: 'en',
             author: { '@type': 'Organization', name: 'Fortune Kids' },
             publisher: { '@type': 'Organization', name: 'Fortune Kids' },
             mainEntityOfPage: window.location.href
         });
 
         ldBreadcrumb([
-            { nombre: 'Inicio', url: '../index.html' },
-            { nombre: 'Historias y noticias', url: 'contenidos.html' },
+            { nombre: 'Home', url: '../index.html' },
+            { nombre: 'Stories & news', url: 'contenidos.html' },
             { nombre: cat.nombre, url: 'categoria.html?slug=' + item.categoria },
             { nombre: item.titulo }
         ]);
     }
 
     // ----------------------------------------
-    // Vista: búsqueda (FK-060..063)
+    // View: search (FK-060..063)
     // ----------------------------------------
 
     function searchItems(q) {
@@ -411,8 +411,8 @@ const FKCatalog = (function () {
         return (
             '<div class="empty-state">' +
                 '<svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>' +
-                '<h3>Sin resultados para &ldquo;' + escapeHtml(q) + '&rdquo;</h3>' +
-                '<p>No encontramos contenidos que coincidan con tu búsqueda. Prueba con otras palabras o explora por categoría:</p>' +
+                '<h3>No results for &ldquo;' + escapeHtml(q) + '&rdquo;</h3>' +
+                '<p>We could not find any content matching your search. Try other words or explore by category:</p>' +
                 '<div class="empty-state__links">' + chips + '</div>' +
             '</div>'
         );
@@ -431,17 +431,17 @@ const FKCatalog = (function () {
 
         if (!q) {
             grid.innerHTML = emptyStateHTML(
-                'Escribe en el buscador lo que quieras encontrar: historias, noticias, recursos o eventos.',
+                'Type what you are looking for in the search box: stories, news, resources or events.',
                 'contenidos.html',
-                'Explorar todo el contenido'
+                'Explore all content'
             );
             return;
         }
 
         title.textContent = 'Resultados para \u201C' + q + '\u201D';
-        document.title = 'Búsqueda: ' + q + ' | Fortune Kids';
+        document.title = 'Search: ' + q + ' | Fortune Kids';
         const crumb = document.querySelector('.breadcrumbs__current');
-        if (crumb) crumb.textContent = 'Búsqueda';
+        if (crumb) crumb.textContent = 'Search';
 
         const items = searchItems(q);
         if (!items.length) {
@@ -451,11 +451,11 @@ const FKCatalog = (function () {
         }
 
         renderCards(grid, items);
-        counter.textContent = items.length === 1 ? '1 resultado' : items.length + ' resultados';
+        counter.textContent = items.length === 1 ? '1 result' : items.length + ' results';
     }
 
     // ----------------------------------------
-    // Init según página
+    // Init depending on page
     // ----------------------------------------
 
     function init() {
@@ -476,7 +476,7 @@ const FKCatalog = (function () {
         init();
     }
 
-    // API pública mínima
+    // Minimal public API
     return {
         cardHTML: cardHTML,
         renderCards: renderCards,
