@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Stories, news and resources from Fortune Kids in Arusha, Tanzania">
+    <meta name="description" content="Everyday moments of Fortune Kids children in Arusha.">
     <meta name="theme-color" content="#0284c7">
 
-    <meta property="og:title" content="Contenido | Fortune Kids">
-    <meta property="og:description" content="Stories, news and resources from Fortune Kids in Arusha, Tanzania">
+    <meta property="og:title" content="Gallery | Fortune Kids">
+    <meta property="og:description" content="Everyday moments of Fortune Kids children in Arusha.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.fortunekids.org/pages/contenido.html">
+    <meta property="og:url" content="https://www.fortunekids.org/pages/gallery.html">
+    <link rel="canonical" href="https://www.fortunekids.org/pages/gallery.html">
+    <link rel="alternate" hreflang="en" href="https://www.fortunekids.org/pages/gallery.html">
+    <link rel="alternate" hreflang="es" href="https://www.fortunekids.org/es/pages/gallery.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.fortunekids.org/pages/gallery.html">
+
     <meta property="og:image" content="https://mmesaman.github.io/fortunekids/assets/images/og-cover.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contenido | Fortune Kids">
-    <meta name="twitter:description" content="Stories, news and resources from Fortune Kids in Arusha, Tanzania">
+    <meta name="twitter:title" content="Gallery | Fortune Kids">
+    <meta name="twitter:description" content="Everyday moments of Fortune Kids children in Arusha.">
     <meta name="twitter:image" content="https://mmesaman.github.io/fortunekids/assets/images/og-cover.jpg">
-    <title>Contenido | Fortune Kids</title>
+    <title>Gallery | Fortune Kids</title>
     
-    <link rel="alternate" hreflang="en" href="https://www.fortunekids.org/pages/contenido.html">
-    <link rel="alternate" hreflang="es" href="https://www.fortunekids.org/es/pages/contenido.html">
-    <link rel="alternate" hreflang="x-default" href="https://www.fortunekids.org/pages/contenido.html">
     <link rel="manifest" href="../manifest.webmanifest">
     <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
     <link rel="stylesheet" href="../css/variables.css">
@@ -30,6 +32,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+        {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fortunekids.org/"}, {"@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://www.fortunekids.org/pages/gallery.html"}]}
+    </script>
 </head>
 <body>
     <a href="#contenido-principal" class="skip-link">Skip to main content</a>
@@ -47,10 +52,9 @@
                     <li><a href="../index.html" class="header__nav-link">Home</a></li>
                     <li><a href="quienes-somos.html" class="header__nav-link">About us</a></li>
                     <li><a href="que-hacemos.html" class="header__nav-link">What we do</a></li>
-                    <li><a href="impacto.html" class="header__nav-link active" aria-current="page">Our impact</a></li>
+                    <li><a href="impacto.html" class="header__nav-link">Our impact</a></li>
                     <li><a href="como-ayudar.html" class="header__nav-link">How to help</a></li>
-                    <li><a href="transparencia.html" class="header__nav-link">Transparency</a></li>
-                    <li><a href="gallery.html" class="header__nav-link">Gallery</a></li>
+                    <li><a href="gallery.html" class="header__nav-link">Gallery</a></li>
                     <li><a href="contacto.html" class="header__nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -65,7 +69,7 @@
                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
             </button>
 
-            <a href="../es/pages/contenido.html" class="header__lang" lang="es" hreflang="es" aria-label="Cambiar a español" title="Español"><svg viewBox="0 0 20 14" width="21" height="15" aria-hidden="true" focusable="false"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg><span class="header__lang-label">ES</span></a>
+            <a href="../es/pages/galeria.html" class="header__lang" lang="es" hreflang="es" aria-label="Cambiar a español" title="Español"><svg viewBox="0 0 20 14" width="21" height="15" aria-hidden="true" focusable="false"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg><span class="header__lang-label">ES</span></a>
 
             <a href="como-ayudar.html#donar" class="btn btn--primary btn--sm header__cta">Donate</a>
         </div>
@@ -81,55 +85,89 @@
 
     <main id="contenido-principal">
         <!-- Page Hero -->
-        <section class="page-hero page-hero--detail">
+        <section class="page-hero">
             <div class="container">
                 <nav class="breadcrumbs" aria-label="Breadcrumbs">
                     <ol class="breadcrumbs__list">
                         <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Home</a></li>
-                        <li class="breadcrumbs__item" id="breadcrumb-categoria"></li>
-                        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Article</span></li>
+                        <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Gallery</span></li>
                     </ol>
                 </nav>
+                <h1 class="page-hero__title">Gallery</h1>
+                <p class="page-hero__subtitle">Everyday moments at Fortune Kids: learning, playing and growing together.</p>
             </div>
         </section>
 
-        <!-- Article -->
-        <article class="section detail" aria-label="Article content">
-            <div class="container detail__inner">
-                <header id="detalle-meta" class="detail__meta"></header>
-                <noscript>
-                    <p class="alert alert--warning">You need a browser with JavaScript enabled to view this page.</p>
-                </noscript>
-                <h1 id="detalle-titulo" class="detail__title"></h1>
-                <div id="detalle-cuerpo" class="detail__body"></div>
-
-                <footer class="detail__footer">
-                    <!-- Compartir (fase 11) -->
-                    <div class="share" id="detalle-share" hidden>
-                        <span class="share__label">Compartir:</span>
-                        <a class="share__btn" id="share-wa" target="_blank" rel="noopener noreferrer" aria-label="Compartir por WhatsApp">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1a13 13 0 0 1-1.5-.6c-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3z"/></svg>
-                        </a>
-                        <a class="share__btn" id="share-fb" target="_blank" rel="noopener noreferrer" aria-label="Compartir en Facebook">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                        </a>
-                        <a class="share__btn" id="share-x" target="_blank" rel="noopener noreferrer" aria-label="Compartir en X">
-                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.6 2H8l4.4 5.9L18.9 2zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20z"/></svg>
-                        </a>
-                        <button type="button" class="share__btn share__btn--copy" id="share-copy" aria-label="Copiar enlace">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                        </button>
-                    </div>
-                    <a href="contenidos.html" class="btn btn--ghost">← Back to stories &amp; news</a>
-                </footer>
-            </div>
-        </article>
-
-        <!-- Related -->
-        <section id="relacionados-section" class="section section--alt related" aria-labelledby="relacionados-title">
+        <!-- Galeria -->
+        <section class="section" aria-labelledby="galeria-grid-title">
             <div class="container">
-                <h2 id="relacionados-title" class="section-title section-title--left">You may also like</h2>
-                <div id="relacionados-grid" class="content-grid"></div>
+                <h2 id="galeria-grid-title" class="visually-hidden">Photo gallery</h2>
+                <div class="gallery-grid">
+                    <figure class="gallery-item">
+                        <button type="button" class="gallery-item__btn" data-full="../assets/images/gallery/g01.jpg" aria-label="Enlarge photo: Lunchtime at the home">
+                            <img src="../assets/images/gallery/g01.jpg" alt="Lunchtime at the home - Fortune Kids" width="900" height="675" loading="lazy">
+                        </button>
+                        <figcaption>Lunchtime at the home</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <button type="button" class="gallery-item__btn" data-full="../assets/images/gallery/g02.jpg" aria-label="Enlarge photo: Study time together">
+                            <img src="../assets/images/gallery/g02.jpg" alt="Study time together - Fortune Kids" width="900" height="675" loading="lazy">
+                        </button>
+                        <figcaption>Study time together</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <button type="button" class="gallery-item__btn" data-full="../assets/images/gallery/g03.jpg" aria-label="Enlarge photo: Playing in the courtyard">
+                            <img src="../assets/images/gallery/g03.jpg" alt="Playing in the courtyard - Fortune Kids" width="900" height="675" loading="lazy">
+                        </button>
+                        <figcaption>Playing in the courtyard</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <button type="button" class="gallery-item__btn" data-full="../assets/images/gallery/g04.jpg" aria-label="Enlarge photo: A day out in Arusha">
+                            <img src="../assets/images/gallery/g04.jpg" alt="A day out in Arusha - Fortune Kids" width="900" height="675" loading="lazy">
+                        </button>
+                        <figcaption>A day out in Arusha</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <button type="button" class="gallery-item__btn" data-full="../assets/images/gallery/g05.jpg" aria-label="Enlarge photo: Homework after school">
+                            <img src="../assets/images/gallery/g05.jpg" alt="Homework after school - Fortune Kids" width="900" height="675" loading="lazy">
+                        </button>
+                        <figcaption>Homework after school</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <button type="button" class="gallery-item__btn" data-full="../assets/images/gallery/g06.jpg" aria-label="Enlarge photo: Registration day">
+                            <img src="../assets/images/gallery/g06.jpg" alt="Registration day - Fortune Kids" width="900" height="675" loading="lazy">
+                        </button>
+                        <figcaption>Registration day</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <button type="button" class="gallery-item__btn" data-full="../assets/images/gallery/g07.jpg" aria-label="Enlarge photo: Smiles that say it all">
+                            <img src="../assets/images/gallery/g07.jpg" alt="Smiles that say it all - Fortune Kids" width="900" height="675" loading="lazy">
+                        </button>
+                        <figcaption>Smiles that say it all</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo" hidden>
+            <button type="button" class="lightbox__close" aria-label="Close">&times;</button>
+            <button type="button" class="lightbox__prev" aria-label="Previous photo">&#8249;</button>
+            <img src="" alt="" class="lightbox__img">
+            <button type="button" class="lightbox__next" aria-label="Next photo">&#8250;</button>
+            <p class="lightbox__caption"></p>
+        </div>
+
+        <!-- CTA Section -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 id="cta-title" class="cta__title">These smiles can be yours too</h2>
+                    <p class="cta__text">Your support becomes food, books and opportunities for these children.</p>
+                    <div class="cta__buttons">
+                        <a href="como-ayudar.html#donar" class="btn btn--white btn--lg">I want to help</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -148,8 +186,6 @@
                         <li><a href="quienes-somos.html">About us</a></li>
                         <li><a href="que-hacemos.html">What we do</a></li>
                         <li><a href="impacto.html">Our impact</a></li>
-                        <li><a href="contenidos.html">Stories &amp; news</a></li>
-                        <li><a href="transparencia.html">Transparency</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                     </ul>
                 </div>
@@ -185,7 +221,7 @@
             </div>
             
             <div class="footer__bottom">
-                <p>&copy; 2026 Fortune Kids. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Fortune Kids. All rights reserved.</p>
                 <nav class="footer__legal" aria-label="Enlaces legales">
                     <a href="politica-privacidad.html">Privacy Policy</a>
                     <a href="politica-cookies.html">Cookie Policy</a>
@@ -195,8 +231,6 @@
         </div>
     </footer>
 
-    <script src="../js/data.js"></script>
-    <script src="../js/catalogo.js"></script>
     <script src="../js/main.js?v=9"></script>
 </body>
 </html>

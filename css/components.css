@@ -859,3 +859,120 @@
         height: 200px;
     }
 }
+
+/* ========================================
+   GALLERY + LIGHTBOX
+   ======================================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-4);
+}
+
+.gallery-item {
+    margin: 0;
+    background-color: var(--color-surface, #fff);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.gallery-item__btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    cursor: zoom-in;
+    background: none;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform var(--transition-fast);
+}
+
+.gallery-item__btn:hover img,
+.gallery-item__btn:focus-visible img {
+    transform: scale(1.04);
+}
+
+.gallery-item figcaption {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    background-color: rgba(2, 20, 35, 0.92);
+    padding: var(--space-6);
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox__img {
+    max-width: min(1000px, 92vw);
+    max-height: 76vh;
+    border-radius: var(--radius-lg);
+}
+
+.lightbox button {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 0;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lightbox button:hover,
+.lightbox button:focus-visible {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.lightbox__close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-5);
+}
+
+.lightbox__prev,
+.lightbox__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox__prev {
+    left: var(--space-4);
+}
+
+.lightbox__next {
+    right: var(--space-4);
+}
+
+.lightbox__caption {
+    color: #fff;
+    font-size: var(--text-sm);
+}
+
+body.no-scroll {
+    overflow: hidden;
+}

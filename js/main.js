@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initCounters();
     initDonationButtons();
+    initLightbox();
     initBackToTop();
     initSearch();
     initServiceWorker();
@@ -752,4 +753,56 @@ function initLazyLoading() {
             img.src = img.dataset.src;
         });
     }
+}
+// ========================================
+// LIGHTBOX
+// ========================================
+
+function initLightbox() {
+    const buttons = document.querySelectorAll('.gallery-item__btn');
+    const lightbox = document.getElementById('lightbox');
+
+    if (!buttons.length || !lightbox) return;
+
+    const img = lightbox.querySelector('.lightbox__img');
+    const caption = lightbox.querySelector('.lightbox__caption');
+    let index = 0;
+
+    function show(i) {
+        index = (i + buttons.length) % buttons.length;
+        const btn = buttons[index];
+        const thumb = btn.querySelector('img');
+        img.src = btn.dataset.full || thumb.src;
+        img.alt = thumb.alt;
+        caption.textContent = btn.closest('figure').querySelector('figcaption').textContent;
+    }
+
+    function close() {
+        lightbox.hidden = true;
+        document.body.classList.remove('no-scroll');
+    }
+
+    buttons.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            show(i);
+            lightbox.hidden = false;
+            document.body.classList.add('no-scroll');
+            lightbox.querySelector('.lightbox__close').focus();
+        });
+    });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) close();
+    });
+
+    lightbox.querySelector('.lightbox__close').addEventListener('click', close);
+    lightbox.querySelector('.lightbox__prev').addEventListener('click', () => show(index - 1));
+    lightbox.querySelector('.lightbox__next').addEventListener('click', () => show(index + 1));
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.hidden) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(index - 1);
+        if (e.key === 'ArrowRight') show(index + 1);
+    });
 }
