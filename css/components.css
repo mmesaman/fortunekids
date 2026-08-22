@@ -770,3 +770,32 @@
 .progress--error .progress__bar {
     background-color: var(--color-error);
 }
+/* ========================================
+   CAMPAIGN CARD (GoFundMe)
+   ======================================== */
+
+.campaign-card {
+    display: flex;
+    gap: var(--space-6);
+    align-items: flex-start;
+    padding: var(--space-8);
+    background-color: var(--color-surface, #fff);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+}
+
+.campaign-card__body h3 {
+    margin: var(--space-2) 0 var(--space-3);
+}
+
+.campaign-card__meta {
+    font-size: var(--text-sm);
+    color: var(--color-neutral-600);
+    margin-bottom: var(--space-5);
+}
+
+@media (max-width: 767px) {
+    .campaign-card {
+        flex-direction: column;
+    }
+}
