@@ -164,22 +164,24 @@ function initDonationButtons() {
     const feedback = document.getElementById('donation-feedback');
     
     if (!buttons.length || !feedback) return;
-    
+
+    const es = document.documentElement.lang.indexOf('es') === 0;
+
     buttons.forEach(button => {
         button.addEventListener('click', function() {
             const amount = this.dataset.amount;
-            const paragraph = feedback.querySelector('p') || feedback;
-            
+            const target = feedback.querySelector('.js-donation-amount');
+
             feedback.hidden = false;
             feedback.setAttribute('tabindex', '-1');
             feedback.focus({ preventScroll: false });
             feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            
-            // Update message with selected amount
-            if (paragraph !== feedback) {
-                paragraph.textContent = `Thank you for wanting to donate €${amount}. The payment gateway will be integrated soon; write to info@fortunekids.org and we will tell you how to complete your donation.`;
+
+            if (target) {
+                target.textContent = es ? `${amount} \u20AC` : `\u20AC${amount}`;
             }
         });
+    });
     });
 }
 
@@ -446,11 +448,15 @@ function initModals() {
 
 function initFormValidation() {
     const forms = document.querySelectorAll('form[data-validate]');
-    
+
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
+            const es = document.documentElement.lang.indexOf('es') === 0;
+            const requiredMsg = es ? 'Este campo es obligatorio' : 'This field is required';
+            const emailMsg = es ? 'Introduce un correo electrónico válido' : 'Please enter a valid email address';
+
             let firstInvalid = null;
 
             function setError(field, message) {
@@ -486,40 +492,64 @@ function initFormValidation() {
             // Required fields
             form.querySelectorAll('[required]').forEach(field => {
                 if (!field.value.trim()) {
-                    setError(field, 'This field is required');
+                    setError(field, requiredMsg);
                 } else {
                     clearError(field);
                 }
             });
-            
+
             // Email validation
             form.querySelectorAll('input[type="email"]').forEach(field => {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (field.value && !emailRegex.test(field.value)) {
-                    setError(field, 'Please enter a valid email address');
+                    setError(field, emailMsg);
                 }
             });
 
             const isValid = !form.querySelector('.form-input--error');
-            
-            if (isValid) {
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'alert alert--success';
-                successMessage.setAttribute('role', 'status');
-                successMessage.textContent = 'Formulario enviado correctamente. Te contactaremos pronto.';
-                form.insertBefore(successMessage, form.firstChild);
-                
-                // Reset form
-                form.reset();
-                
-                // Remove success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
-            } else if (firstInvalid) {
-                firstInvalid.focus();
+
+            if (!isValid) {
+                if (firstInvalid) firstInvalid.focus();
+                return;
             }
+
+            const endpoint = form.dataset.endpoint;
+            const submitBtn = form.querySelector('[type="submit"]');
+
+            function showAlert(text, cls) {
+                const alertBox = document.createElement('div');
+                alertBox.className = 'alert ' + cls;
+                alertBox.setAttribute('role', 'status');
+                alertBox.textContent = text;
+                form.insertBefore(alertBox, form.firstChild);
+                setTimeout(() => alertBox.remove(), 8000);
+            }
+
+            if (submitBtn) submitBtn.disabled = true;
+
+            const data = {};
+            new FormData(form).forEach((value, key) => { data[key] = value; });
+
+            fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    showAlert(es ? 'Mensaje enviado correctamente. Te contactaremos pronto.' : 'Message sent successfully. We will get back to you soon.', 'alert--success');
+                    form.reset();
+                })
+                .catch(() => {
+                    showAlert(
+                        es ? 'No se pudo enviar el formulario. Escríbenos directamente a info@fortunekids.org'
+                           : 'The form could not be sent. Please email us directly at info@fortunekids.org',
+                        'alert--error'
+                    );
+                })
+                .finally(() => {
+                    if (submitBtn) submitBtn.disabled = false;
+                });
         });
     });
 }

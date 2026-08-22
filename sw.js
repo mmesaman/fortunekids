@@ -1,12 +1,12 @@
 /* Fortune Kids - Service Worker (fase 12) */
-const VERSION = 'fk-v5';
+const VERSION = 'fk-v6';
 const PRECACHE = [
     './',
     './index.html',
     './404.html',
     './offline.html',
     './manifest.webmanifest',
-    './assets/icons/favicon.svg',
+    './assets/icons/favicon.png',
     './css/variables.css',
     './css/base.css',
     './css/layout.css',
@@ -14,8 +14,8 @@ const PRECACHE = [
     './js/main.js',
     './js/data.js',
     './js/catalogo.js'
-    './assets/images/logo-fortune-kids.jpg',
-    './assets/images/hero.jpg',
+    './assets/images/logo-fortune-kids.webp',
+    './assets/images/hero.webp',
     './assets/icons/social/instagram.png',
     './assets/icons/social/facebook.png',
     './assets/icons/social/whatsapp.png',

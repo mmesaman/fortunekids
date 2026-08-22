@@ -23,7 +23,7 @@
     <title>How to help | Fortune Kids</title>
     
     <link rel="manifest" href="../manifest.webmanifest">
-    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" href="../assets/icons/favicon.png">
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/layout.css">
@@ -43,7 +43,7 @@
         <div class="container header__container">
             <div class="header__logo">
                 <a href="../index.html" aria-label="Fortune Kids - Home">
-                    <img src="../assets/images/logo-fortune-kids.jpg" alt="" width="44" height="44" class="header__logo-img">
+                    <img src="../assets/images/logo-fortune-kids.webp" alt="" width="44" height="44" class="header__logo-img">
                 </a>
             </div>
             
@@ -127,8 +127,13 @@
                 </div>
 
                 <div id="donation-feedback" class="alert alert--info" role="status" hidden>
-                    <p>The payment gateway will be integrated soon. Write to us at
-                    <a href="mailto:info@fortunekids.org">info@fortunekids.org</a> and we will tell you how to make your donation.</p>
+                    <p>Thank you for wanting to donate <strong class="js-donation-amount"></strong>. Choose one of the platforms below and mention the amount in the payment note.</p>
+                </div>
+                <!-- SUSTITUIR estos enlaces por las cuentas reales de la asociacion -->
+                <div class="donation-gateways">
+                    <a href="https://www.paypal.me/FORTUNEKIDS" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Donate with PayPal</a>
+                    <a href="https://liberapay.com/FortuneKids/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Liberapay</a>
+                    <a href="https://www.gofundme.com/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">GoFundMe</a>
                 </div>
             </div>
         </section>

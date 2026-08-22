@@ -502,6 +502,21 @@
 }
 
 /* ========================================
+   DONATION GATEWAYS
+   ======================================== */
+
+.donation-gateways {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: calc(-1 * var(--space-2));
+}
+
+.donation-gateways .btn {
+    min-width: 11rem;
+}
+
+/* ========================================
    QUOTE COMPONENT
    ======================================== */
 
