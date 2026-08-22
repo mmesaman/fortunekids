@@ -28,6 +28,32 @@ const FKCatalog = (function () {
         return new URLSearchParams(window.location.search).get(name);
     }
 
+    // Datos estructurados JSON-LD (fase 11)
+    function ldInject(obj) {
+        if (!document.head) return;
+        try {
+            const s = document.createElement('script');
+            s.type = 'application/ld+json';
+            s.textContent = JSON.stringify(obj);
+            document.head.appendChild(s);
+        } catch (e) {}
+    }
+
+    function ldBreadcrumb(items) {
+        try {
+            const base = document.baseURI || window.location.href;
+            ldInject({
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: items.map(function (it, i) {
+                    const li = { '@type': 'ListItem', position: i + 1, name: it.nombre };
+                    if (it.url) li.item = new URL(it.url, base).href;
+                    return li;
+                })
+            });
+        } catch (e) {}
+    }
+
     function byDateDesc(a, b) {
         return new Date(b.fecha) - new Date(a.fecha);
     }
@@ -234,6 +260,11 @@ const FKCatalog = (function () {
         title.textContent = cat.nombre;
         desc.textContent = cat.descripcion;
 
+        ldBreadcrumb([
+            { nombre: 'Inicio', url: '../index.html' },
+            { nombre: cat.nombre, url: 'categoria.html?slug=' + slug }
+        ]);
+
         // Marcar breadcrumb actual
         const crumb = document.querySelector('.breadcrumbs__current');
         if (crumb) crumb.textContent = cat.nombre;
@@ -336,23 +367,23 @@ const FKCatalog = (function () {
         }
 
         // Datos estructurados Article (fase 11)
-        if (document.head) {
-            try {
-                const ld = document.createElement('script');
-                ld.type = 'application/ld+json';
-                ld.textContent = JSON.stringify({
-                    '@context': 'https://schema.org',
-                    '@type': 'Article',
-                    headline: item.titulo,
-                    datePublished: item.fecha,
-                    inLanguage: 'es',
-                    author: { '@type': 'Organization', name: 'Fortune Kids' },
-                    publisher: { '@type': 'Organization', name: 'Fortune Kids' },
-                    mainEntityOfPage: window.location.href
-                });
-                document.head.appendChild(ld);
-            } catch (e) {}
-        }
+        ldInject({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: item.titulo,
+            datePublished: item.fecha,
+            inLanguage: 'es',
+            author: { '@type': 'Organization', name: 'Fortune Kids' },
+            publisher: { '@type': 'Organization', name: 'Fortune Kids' },
+            mainEntityOfPage: window.location.href
+        });
+
+        ldBreadcrumb([
+            { nombre: 'Inicio', url: '../index.html' },
+            { nombre: 'Historias y noticias', url: 'contenidos.html' },
+            { nombre: cat.nombre, url: 'categoria.html?slug=' + item.categoria },
+            { nombre: item.titulo }
+        ]);
     }
 
     // ----------------------------------------

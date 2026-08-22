@@ -1968,3 +1968,33 @@ a:focus-visible {
         widows: 3;
     }
 }
+
+/* ========================================
+   TOAST DE ACTUALIZACION PWA (fase 12)
+   ======================================== */
+
+.version-toast {
+    position: fixed;
+    bottom: var(--space-4);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--color-neutral-900);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: calc(var(--z-sticky) + 10);
+    font-size: var(--text-sm);
+}
+
+@media (max-width: 480px) {
+    .version-toast {
+        left: var(--space-3);
+        right: var(--space-3);
+        transform: none;
+        justify-content: space-between;
+    }
+}

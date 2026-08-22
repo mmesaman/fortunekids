@@ -36,7 +36,49 @@ function initServiceWorker() {
     // Ruta raiz del sitio derivada del manifest (presente en todas las paginas)
     const manifest = document.querySelector('link[rel="manifest"]');
     const raiz = manifest ? manifest.href.replace('manifest.webmanifest', '') : './';
-    navigator.serviceWorker.register(raiz + 'sw.js').catch(function () {});
+
+    let recargando = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+        if (recargando) return;
+        recargando = true;
+        window.location.reload();
+    });
+
+    navigator.serviceWorker.register(raiz + 'sw.js').then(function (reg) {
+        reg.addEventListener('updatefound', function () {
+            const nueva = reg.installing;
+            if (!nueva) return;
+            nueva.addEventListener('statechange', function () {
+                if (nueva.state === 'installed' && navigator.serviceWorker.controller) {
+                    mostrarAvisoVersion(nueva);
+                }
+            });
+        });
+    }).catch(function () {});
+}
+
+function mostrarAvisoVersion(worker) {
+    if (document.getElementById('aviso-version')) return;
+
+    const aviso = document.createElement('div');
+    aviso.id = 'aviso-version';
+    aviso.className = 'version-toast';
+    aviso.setAttribute('role', 'status');
+
+    const texto = document.createElement('span');
+    texto.textContent = 'Hay una nueva versión de la web';
+    aviso.appendChild(texto);
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'btn btn--primary btn--sm';
+    btn.textContent = 'Actualizar';
+    btn.addEventListener('click', function () {
+        worker.postMessage('SKIP_WAITING');
+    });
+    aviso.appendChild(btn);
+
+    document.body.appendChild(aviso);
 }
 
 // ========================================
