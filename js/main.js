@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     [initActiveNav, initMobileMenu, initSmoothScroll, initHeaderScroll,
      initDropdowns, initTabs, initAccordion, initModals, initFormValidation,
      initAnimations, initCounters, initDonationButtons, initLightbox,
-     initBackToTop, initSearch, initServiceWorker, initCookieConsent].forEach(function (fn) {
+     initBackToTop, initSearch, initServiceWorker, initCookieConsent,
+     initBreadcrumbHash].forEach(function (fn) {
         try { fn(); } catch (err) { /* un modulo no debe romper el resto */ }
     });
 });
@@ -846,4 +847,27 @@ function initCookieConsent() {
     banner.querySelector('.js-cookie-reject').addEventListener('click', () => save('rejected'));
 
     document.body.appendChild(banner);
+}
+
+// ========================================
+// BREADCRUMB SYNC (hash -> texto)
+// ========================================
+
+function initBreadcrumbHash() {
+    const current = document.querySelector('.breadcrumbs__current');
+    const heroTitle = document.querySelector('.page-hero__title');
+    if (!current || !heroTitle) return;
+
+    const es = document.documentElement.lang.indexOf('es') === 0;
+    const MAP = {
+        '#apadrinar': es ? 'Apadrina un niño' : 'Sponsor a child',
+        '#donar': es ? 'Haz una donación' : 'Make a donation'
+    };
+
+    function update() {
+        current.textContent = MAP[location.hash] || heroTitle.textContent.trim();
+    }
+
+    window.addEventListener('hashchange', update);
+    update();
 }
