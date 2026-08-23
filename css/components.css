@@ -1032,7 +1032,7 @@ body.no-scroll {
 
 .sponsor-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
 }
 
@@ -1089,4 +1089,16 @@ body.no-scroll {
 
 .other-ways h3 {
     margin-bottom: var(--space-3);
+}
+
+/* Sponsor grid: 3 columnas en escritorio, 2 en tablet, 1 en movil */
+@media (max-width: 900px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .sponsor-grid {
+        grid-template-columns: 1fr;
+    }
 }
