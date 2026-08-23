@@ -1102,3 +1102,24 @@ body.no-scroll {
         grid-template-columns: 1fr;
     }
 }
+
+/* Insignia grande del logo en el hero de las portadas */
+.hero__logo {
+    width: clamp(96px, 12vw, 136px);
+    aspect-ratio: 1;
+    padding: 12%;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid var(--color-primary-500);
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-5);
+}
+
+.hero__logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
