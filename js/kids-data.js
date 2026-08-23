@@ -127,6 +127,9 @@ var KIDS = [
       var spBadge = k.apadrinado
         ? '\n                            <span class="badge badge--success">' + L.sp + ' \u2713</span>'
         : "";
+      var cta = k.apadrinado
+        ? '<button type="button" class="btn btn--secondary btn--sm" disabled aria-disabled="true" title="' + (es ? "Ya tiene padrino" : "Already sponsored") + '">' + L.btn + " " + esc(k.nombre.split(" ")[0]) + '</button>'
+        : '<a href="mailto:info@fortunekids.org?subject=' + encodeURIComponent(L.subj + k.nombre) + '" class="btn btn--secondary btn--sm">' + L.btn + " " + esc(k.nombre.split(" ")[0]) + '</a>';
       return (
 '                    <article class="sponsor-child card">\n'
 + '                        <img src="' + BASE + 'assets/images/sponsor/' + k.foto + '" alt="' + esc(k.nombre) + '" width="480" height="336" loading="lazy">\n'
@@ -135,7 +138,7 @@ var KIDS = [
 + '                            <span class="badge badge--primary">' + k.edad + " " + L.anos + " &middot; " + genero + '</span>' + spBadge + '\n'
 + '                            <p class="card__text"><strong>' + L.ama + ':</strong> ' + esc(es ? k.hobby_es : k.hobby_en) + '<br>\n'
 + '                            <strong>' + L.sueño + ':</strong> ' + esc(es ? k.sueno_es : k.sueno_en) + '</p>\n'
-+ '                            <a href="mailto:info@fortunekids.org?subject=' + encodeURIComponent(L.subj + k.nombre) + '" class="btn btn--secondary btn--sm">' + L.btn + " " + esc(k.nombre.split(" ")[0]) + '</a>\n'
++ '                            ' + cta + '\n'
 + '                        </div>\n'
 + '                    </article>');
     }
