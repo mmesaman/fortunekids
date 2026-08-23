@@ -855,19 +855,23 @@ function initCookieConsent() {
 
 function initBreadcrumbHash() {
     const current = document.querySelector('.breadcrumbs__current');
-    const heroTitle = document.querySelector('.page-hero__title');
-    if (!current || !heroTitle) return;
+    if (!current) return;
 
     const es = document.documentElement.lang.indexOf('es') === 0;
     const MAP = {
         '#apadrinar': es ? 'Apadrina un niño' : 'Sponsor a child',
         '#donar': es ? 'Haz una donación' : 'Make a donation'
     };
+    const original = current.textContent;
 
     function update() {
-        current.textContent = MAP[location.hash] || heroTitle.textContent.trim();
+        const text = MAP[location.hash];
+        current.textContent = text || original;
     }
 
     window.addEventListener('hashchange', update);
+    document.querySelectorAll('.hero-quicknav a').forEach(a => {
+        a.addEventListener('click', () => setTimeout(update, 0));
+    });
     update();
 }
