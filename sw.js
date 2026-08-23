@@ -1,5 +1,5 @@
 /* Fortune Kids - Service Worker (fase 12) */
-const VERSION = 'fk-v20';
+const VERSION = 'fk-v21';
 const PRECACHE = [
     './',
     './index.html',
@@ -12,6 +12,8 @@ const PRECACHE = [
     './css/layout.css',
     './css/components.css',
     './js/main.js',
+    './js/kids-data.js',
+    './js/gallery-data.js',
     './js/data.js',
     './js/catalogo.js'
     './assets/images/logo-fortune-kids.webp',
@@ -48,7 +50,7 @@ self.addEventListener('fetch', function (e) {
 
     const esNavegacion = req.mode === 'navigate' || (req.headers.get('accept') || '').indexOf('text/html') !== -1;
 
-    if (esNavegacion) {
+    if (esNavegacion || req.url.indexOf('-data.js') !== -1) {
         // Network-first con reserva en cache y pagina offline
         e.respondWith(
             fetch(req).then(function (res) {
