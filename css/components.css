@@ -1073,8 +1073,12 @@ body.no-scroll {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--space-3);
+    gap: var(--space-6);
     margin-top: var(--space-5);
+}
+
+.hero-quicknav .btn + .btn {
+    margin-left: var(--space-2);
 }
 
 .other-ways {
