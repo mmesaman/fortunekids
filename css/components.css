@@ -1064,3 +1064,25 @@ body.no-scroll {
     margin-top: auto;
     align-self: flex-start;
 }
+
+/* ========================================
+   HELP PAGE QUICKNAV + OTHER WAYS
+   ======================================== */
+
+.hero-quicknav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+}
+
+.other-ways {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-neutral-200);
+}
+
+.other-ways h3 {
+    margin-bottom: var(--space-3);
+}
