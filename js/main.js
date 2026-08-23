@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     [initActiveNav, initMobileMenu, initSmoothScroll, initHeaderScroll,
      initDropdowns, initTabs, initAccordion, initModals, initFormValidation,
      initAnimations, initCounters, initDonationButtons, initLightbox,
-     initBackToTop, initSearch, initServiceWorker].forEach(function (fn) {
+     initBackToTop, initSearch, initServiceWorker, initCookieConsent].forEach(function (fn) {
         try { fn(); } catch (err) { /* un modulo no debe romper el resto */ }
     });
 });
@@ -795,4 +795,55 @@ function initLightbox() {
         if (e.key === 'ArrowLeft') show(index - 1);
         if (e.key === 'ArrowRight') show(index + 1);
     });
+}
+
+// ========================================
+// COOKIE CONSENT
+// ========================================
+
+function initCookieConsent() {
+    const KEY = 'fk-cookie-consent';
+
+    let stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    if (stored) return;
+
+    const es = document.documentElement.lang.indexOf('es') === 0;
+
+    let root = '/';
+    const manifestLink = document.querySelector('link[rel="manifest"]');
+    if (manifestLink) {
+        root = manifestLink.href.replace(/manifest\.webmanifest.*$/, '');
+    } else if (document.documentElement.lang && !location.pathname.includes('/fortunekids/es/')) {
+        root = location.pathname.replace(/(pages\/)?[^/]*$/, '');
+    }
+
+    const policyUrl = root + (es ? 'es/pages/politica-cookies.html' : 'pages/politica-cookies.html');
+
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-live', 'polite');
+    banner.setAttribute('aria-label', es ? 'Aviso de cookies' : 'Cookie notice');
+    banner.innerHTML =
+        '<p class="cookie-banner__text">' +
+        (es
+            ? 'Utilizamos cookies propias y de terceros para mejorar tu experiencia de navegación. Puedes aceptarlas o rechazarlas. Más información en nuestra '
+            : 'We use our own and third-party cookies to improve your browsing experience. You can accept or reject them. More information in our ') +
+        '<a href="' + policyUrl + '">' + (es ? 'política de cookies' : 'cookie policy') + '</a>.' +
+        '</p>' +
+        '<div class="cookie-banner__actions">' +
+        '<button type="button" class="btn btn--primary btn--sm js-cookie-accept">' + (es ? 'Aceptar' : 'Accept') + '</button>' +
+        '<button type="button" class="btn btn--secondary btn--sm js-cookie-reject">' + (es ? 'Rechazar' : 'Reject') + '</button>' +
+        '</div>';
+
+    function save(value) {
+        try { localStorage.setItem(KEY, value); } catch (e) {}
+        banner.remove();
+    }
+
+    banner.querySelector('.js-cookie-accept').addEventListener('click', () => save('accepted'));
+    banner.querySelector('.js-cookie-reject').addEventListener('click', () => save('rejected'));
+
+    document.body.appendChild(banner);
 }
