@@ -8,22 +8,12 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all modules
-    initActiveNav();
-    initMobileMenu();
-    initSmoothScroll();
-    initHeaderScroll();
-    initDropdowns();
-    initTabs();
-    initAccordion();
-    initModals();
-    initFormValidation();
-    initAnimations();
-    initCounters();
-    initDonationButtons();
-    initLightbox();
-    initBackToTop();
-    initSearch();
-    initServiceWorker();
+    [initActiveNav, initMobileMenu, initSmoothScroll, initHeaderScroll,
+     initDropdowns, initTabs, initAccordion, initModals, initFormValidation,
+     initAnimations, initCounters, initDonationButtons, initLightbox,
+     initBackToTop, initSearch, initServiceWorker].forEach(function (fn) {
+        try { fn(); } catch (err) { /* un modulo no debe romper el resto */ }
+    });
 });
 
 // ========================================
