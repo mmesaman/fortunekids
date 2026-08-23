@@ -1025,3 +1025,42 @@ body.no-scroll {
         justify-content: flex-end;
     }
 }
+
+/* ========================================
+   SPONSOR A CHILD
+   ======================================== */
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-6);
+}
+
+.sponsor-child {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sponsor-child > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 480 / 336;
+    object-fit: cover;
+}
+
+.sponsor-child .card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    flex: 1;
+}
+
+.sponsor-child .card__text {
+    margin-bottom: var(--space-3);
+}
+
+.sponsor-child .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
