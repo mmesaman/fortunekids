@@ -1104,6 +1104,10 @@ body.no-scroll {
 }
 
 /* Marca del header compacta: logo + nombre en una linea */
+
+.header .container {
+    column-gap: clamp(32px, 5vw, 80px);
+}
 .header__brand-link {
     display: flex;
     align-items: center;
@@ -1113,8 +1117,8 @@ body.no-scroll {
 }
 
 .header__logo-img {
-    width: 60px;
-    height: 60px;
+    width: 72px;
+    height: 72px;
 }
 
 .header__brand-text {
@@ -1124,7 +1128,7 @@ body.no-scroll {
 }
 
 .header__brand-name {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.01em;
     color: var(--color-primary-700);
@@ -1142,6 +1146,6 @@ body.no-scroll {
 }
 
 @media (max-width: 600px) {
-    .header__logo-img { width: 44px; height: 44px; }
-    .header__brand-name { font-size: 1.15rem; }
+    .header__logo-img { width: 50px; height: 50px; }
+    .header__brand-name { font-size: 1.25rem; }
 }
