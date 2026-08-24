@@ -1,5 +1,5 @@
 /* Fortune Kids - Service Worker (fase 12) */
-const VERSION = 'fk-v27';
+const VERSION = 'fk-v28';
 const PRECACHE = [
     './',
     './index.html',

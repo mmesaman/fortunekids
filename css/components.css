@@ -1113,8 +1113,8 @@ body.no-scroll {
 }
 
 .header__logo-img {
-    width: 46px;
-    height: 46px;
+    width: 60px;
+    height: 60px;
 }
 
 .header__brand-text {
@@ -1124,19 +1124,12 @@ body.no-scroll {
 }
 
 .header__brand-name {
-    font-size: 1.08rem;
+    font-size: 1.35rem;
     font-weight: 800;
     letter-spacing: -0.01em;
     color: var(--color-primary-700);
 }
 
-.header__brand-tag {
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--color-gray-500, #64748b);
-}
 
 /* Menu: sin saltos de linea */
 .header__nav-list {
@@ -1148,10 +1141,7 @@ body.no-scroll {
     white-space: nowrap;
 }
 
-@media (max-width: 1240px) {
-    .header__brand-tag { display: none; }
-}
 @media (max-width: 600px) {
-    .header__logo-img { width: 40px; height: 40px; }
-    .header__brand-name { font-size: 1rem; }
+    .header__logo-img { width: 44px; height: 44px; }
+    .header__brand-name { font-size: 1.15rem; }
 }

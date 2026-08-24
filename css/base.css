@@ -366,7 +366,7 @@ select {
     background-color: var(--color-white);
     box-shadow: var(--shadow-sm);
     z-index: var(--z-sticky);
-    height: 80px;
+    height: 96px;
     display: flex;
     align-items: center;
 }
@@ -575,7 +575,7 @@ select {
 @media (max-width: 1023px) {
     .header__nav.active {
         position: fixed;
-        top: 80px;
+        top: 96px;
         left: 0;
         right: 0;
         bottom: 0;
@@ -633,7 +633,7 @@ select {
    ======================================== */
 
 main {
-    padding-top: 80px; /* Header height */
+    padding-top: 96px; /* Header height */
 }
 
 /* ========================================
