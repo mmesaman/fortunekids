@@ -1117,22 +1117,10 @@ body.no-scroll {
 }
 
 .header__logo-img {
-    width: 72px;
-    height: 72px;
+    width: 84px;
+    height: 84px;
 }
 
-.header__brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-}
-
-.header__brand-name {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    color: var(--color-primary-700);
-}
 
 
 /* Menu: sin saltos de linea */
@@ -1146,6 +1134,5 @@ body.no-scroll {
 }
 
 @media (max-width: 600px) {
-    .header__logo-img { width: 50px; height: 50px; }
-    .header__brand-name { font-size: 1.25rem; }
+    .header__logo-img { width: 56px; height: 56px; }
 }
