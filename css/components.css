@@ -1119,6 +1119,10 @@ body.no-scroll {
 .header__logo-img {
     width: 84px;
     height: 84px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary-500);
+    background-color: #fff;
+    box-shadow: var(--shadow-md);
 }
 
 
