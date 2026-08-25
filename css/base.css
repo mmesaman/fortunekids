@@ -377,11 +377,6 @@ select {
     justify-content: space-between;
 }
 
-.header__logo-img {
-    height: 40px;
-    width: auto;
-}
-
 .header__nav {
     display: none;
 }
