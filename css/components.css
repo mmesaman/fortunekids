@@ -1104,6 +1104,15 @@ body.no-scroll {
 }
 
 /* Marca del header: sello circular del logo */
+
+.header__brand-name {
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--color-primary-700);
+    white-space: nowrap;
+}
 .header__brand-link {
     display: flex;
     align-items: center;
@@ -1139,6 +1148,9 @@ body.no-scroll {
     white-space: nowrap;
 }
 
+@media (max-width: 768px) {
+    .header__brand-name { display: none; }
+}
 @media (max-width: 600px) {
     .header__brand-link { width: 68px; height: 68px; }
 }
