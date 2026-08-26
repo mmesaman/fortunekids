@@ -21,7 +21,7 @@ html {
 
 /* Anchor targets clear the fixed header */
 [id] {
-    scroll-margin-top: 140px;
+    scroll-margin-top: 152px;
 }
 
 body {
@@ -366,7 +366,7 @@ select {
     background-color: var(--color-white);
     box-shadow: var(--shadow-sm);
     z-index: var(--z-sticky);
-    height: 140px;
+    height: 152px;
     display: flex;
     align-items: center;
 }
@@ -1130,7 +1130,7 @@ main {
     padding: var(--space-8);
     box-shadow: var(--shadow-md);
     border-top: 4px solid transparent;
-    scroll-margin-top: 150px;
+    scroll-margin-top: 160px;
 }
 
 .story--education {
