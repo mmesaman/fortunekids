@@ -1103,10 +1103,10 @@ body.no-scroll {
     }
 }
 
-/* Marca del header: sello circular del logo */
+/* Marca del header: sello + nombre vertical */
 
 .header__brand-name {
-    font-size: 1.65rem;
+    font-size: 1.45rem;
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -1115,16 +1115,25 @@ body.no-scroll {
 }
 .header__brand-link {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 128px;
-    height: 128px;
+    gap: 6px;
     flex-shrink: 0;
+    text-decoration: none;
+    padding-bottom: 6px;
+}
+
+.header__brand-seal {
+    width: 112px;
+    height: 112px;
     border-radius: 50%;
     background-color: #fff;
     border: 3px solid var(--color-primary-500);
     box-shadow: var(--shadow-md);
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header__logo-img {
@@ -1152,5 +1161,5 @@ body.no-scroll {
     .header__brand-name { display: none; }
 }
 @media (max-width: 600px) {
-    .header__brand-link { width: 68px; height: 68px; }
+    .header__brand-seal { width: 68px; height: 68px; }
 }

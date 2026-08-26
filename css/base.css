@@ -570,7 +570,7 @@ select {
 @media (max-width: 1023px) {
     .header__nav.active {
         position: fixed;
-        top: 96px;
+        top: 152px;
         left: 0;
         right: 0;
         bottom: 0;
@@ -628,7 +628,7 @@ select {
    ======================================== */
 
 main {
-    padding-top: 140px; /* Header height */
+    padding-top: 152px; /* Header height */
 }
 
 /* ========================================
