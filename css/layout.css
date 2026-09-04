@@ -135,12 +135,22 @@
     .hide-mobile { display: none !important; }
     .show-mobile { display: block !important; }
     .show-mobile-flex { display: flex !important; }
+
+    /* Grids collapse to a single column on mobile */
+    .grid--2, .grid--3, .grid--4 {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .hide-tablet { display: none !important; }
     .show-tablet { display: block !important; }
     .show-tablet-flex { display: flex !important; }
+
+    /* Taller grids drop to two columns on tablet */
+    .grid--3, .grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 1024px) {
