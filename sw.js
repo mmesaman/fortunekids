@@ -1,5 +1,5 @@
 /* Fortune Kids - Service Worker (fase 12) */
-const VERSION = 'fk-v44';
+const VERSION = 'fk-v45';
 const PRECACHE = [
     './',
     './index.html',
@@ -26,6 +26,7 @@ const PRECACHE = [
 ];
 
 self.addEventListener('install', function (e) {
+    self.skipWaiting();
     e.waitUntil(
         caches.open(VERSION).then(function (cache) { return cache.addAll(PRECACHE); })
     );
