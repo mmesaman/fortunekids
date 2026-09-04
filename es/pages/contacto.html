@@ -31,7 +31,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&family=Poppins:wght@600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="application/ld+json">
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.fortunekids.org/"}, {"@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://www.fortunekids.org/pages/contacto.html"}]}
     </script>
@@ -105,18 +105,9 @@
                 <!-- Info -->
                 <div class="contact-info">
                     <h2 id="contacto-title" class="section-title section-title--left">Estamos aquí para escucharte</h2>
-                    <p>Responde el formulario y te contestaremos en un plazo máximo de 48 horas laborables.</p>
+                    <p>Responde el formulario y te contestaremos en 24/48 horas laborables.</p>
 
                     <ul class="contact-info__list">
-                        <li class="contact-info__item">
-                            <span class="contact-info__icon category-card__icon--primary" aria-hidden="true">
-                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            </span>
-                            <div>
-                                <strong>Dirección</strong>
-                                <span>Arusha, Tanzania</span>
-                            </div>
-                        </li>
                         <li class="contact-info__item">
                             <span class="contact-info__icon category-card__icon--secondary" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
@@ -132,14 +123,27 @@
                             </span>
                             <div>
                                 <strong>Tiempo de respuesta</strong>
-                                <span>48 horas laborables</span>
+                                <span>24-48 horas laborables</span>
+                            </div>
+                        </li>
+                        <li class="contact-info__item">
+                            <span class="contact-info__icon category-card__icon--primary" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </span>
+                            <div>
+                                <strong>Dirección</strong>
+                                <span>Usa-River, Arusha-Tanzania</span>
                             </div>
                         </li>
                     </ul>
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps?q=Usa+River,+Arusha,+Tanzania&output=embed" width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de ubicación de Fortune Kids"></iframe>
+                    </div>
                 </div>
 
                 <!-- Form -->
-                <form class="contact-form card" data-validate data-endpoint="https://formsubmit.co/ajax/mmesaman@gmail.com" novalidate>
+                <form class="contact-form card" data-validate data-endpoint="https://formsubmit.co/ajax/fortunekidsfoundation@gmail.com" novalidate>
+                    <input type="hidden" name="_cc" value="africanchildren16@gmail.com,info@fortunekids.org">
                     <h3 class="card__title">Envíanos un mensaje</h3>
 
                     <div class="form-group">
@@ -155,6 +159,7 @@
                     <div class="form-group">
                         <label for="asunto" class="form-label">Motivo de contacto</label>
                         <select id="asunto" name="asunto" class="form-select">
+                            <option value="sponsor">Apadrina un niño</option>
                             <option value="donacion">Quiero donar</option>
                             <option value="voluntariado">Quiero ser voluntario/a</option>
                             <option value="empresa">Colaboración de empresa</option>

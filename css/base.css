@@ -374,7 +374,7 @@ select {
 .header .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .header__nav {
@@ -426,6 +426,7 @@ select {
     flex-direction: column;
     gap: 5px;
     padding: var(--space-2);
+    margin-left: auto;
 }
 
 .header__menu-toggle span {
@@ -610,6 +611,7 @@ select {
 @media (min-width: 1024px) {
     .header__nav {
         display: block;
+        margin-left: clamp(4px, 1vw, 12px);
     }
     
     .header__menu-toggle {
@@ -1332,6 +1334,19 @@ main {
     justify-content: center;
     border-radius: var(--radius-lg);
     flex-shrink: 0;
+}
+
+.contact-map {
+    margin-top: var(--space-8);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    line-height: 0;
+}
+
+.contact-map iframe {
+    display: block;
+    width: 100%;
 }
 
 .contact-form h3 {
